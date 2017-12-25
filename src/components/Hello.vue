@@ -8,6 +8,7 @@
             <div class="three">3</div>
             <div class="six">6</div>
             <div class="nine">9</div>
+            
             <!--时 分 秒 各指针-->
             <div class="second" v-bind:style="{transform:'rotate('+inif.seconds+'deg)'}"></div>
             <div class="minute" v-bind:style="{transform:'rotate('+inif.minute+'deg)'}"></div>
