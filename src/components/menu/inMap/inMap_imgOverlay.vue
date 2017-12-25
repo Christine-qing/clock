@@ -6,6 +6,7 @@
 <script>
     import {
         marker,
+        
         point
     } from "../../../assets/data/inmap_data";
     import img from "../../../assets/logo.png";
