@@ -1,0 +1,78 @@
+<template>
+    <div>
+        <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+        <div id="mapid"></div>
+    </div>
+</template>
+
+<script>
+    import leaflet from "leaflet";
+    export default {
+        name: "",
+        data() {
+            return {
+                mymap: null,
+                popup: L.popup(),
+            };
+        },
+        components: {},
+        mounted() {
+            this.init();
+            this.setData()
+        },
+        methods: {
+            init() {
+                this.mymap = L.map("mapid", {
+                    center: [39.9, 116.4],
+                    zoom: 12,
+                });
+                L.tileLayer(
+                    "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw", {
+                        maxZoom: 18,
+                        // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                        //   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        //   'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                        id: "mapbox.streets"
+                    }
+                ).addTo(this.mymap);
+            },
+            setData() {
+                debugger
+                var geojsonFeature = {
+                    "type": "Feature",
+                    "properties": {
+                        "name": "Coors Field",
+                        "amenity": "Baseball Stadium",
+                        "popupContent": "This is where the Rockies play!"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates":[39.9, 116.4]
+                    }
+                };
+                L.geoJSON(geojsonFeature).addTo(this.mymap);
+            }
+        }
+    };
+</script>
+
+<style scoped>
+    #mapid {
+        position: absolute;
+        top: 30px;
+        bottom: 0;
+        width: 100%;
+    }
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+

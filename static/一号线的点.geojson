@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "一号线的点",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "name": "海盐站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "1号线" }, "geometry": { "type": "Point", "coordinates": [ 13463306.47760009765625, 3572449.95477294921875 ] } },
+{ "type": "Feature", "properties": { "Id": 1, "name": "嘉兴南站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "1号线" }, "geometry": { "type": "Point", "coordinates": [ 13447442.196904443204403, 3591512.55873586749658 ] } },
+{ "type": "Feature", "properties": { "Id": 2, "name": "中港城站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "1号线" }, "geometry": { "type": "Point", "coordinates": [ 13446320.19378662109375, 3598493.113254749681801 ] } },
+{ "type": "Feature", "properties": { "Id": 3, "name": "江南大厦站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "1号线" }, "geometry": { "type": "Point", "coordinates": [ 13441879.95095099508762, 3601665.279894119128585 ] } },
+{ "type": "Feature", "properties": { "Id": 4, "name": "九里路站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "1号线" }, "geometry": { "type": "Point", "coordinates": [ 13435766.217422151938081, 3602871.439451835583895 ] } },
+{ "type": "Feature", "properties": { "Id": 5, "name": "新塍站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "1号线" }, "geometry": { "type": "Point", "coordinates": [ 13427058.48846435546875, 3604411.68524169921875 ] } }
+]
+}

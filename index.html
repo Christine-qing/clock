@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>clock</title>
+    <link rel="stylesheet" type="text/css" href="http://demo.ishowchina.com/apidemos/sourceLinks/style.css" />
+
+    <!--这行代码等同于下面的多个链接 立德地图-->
+    <!--<script type="text/javascript" src="http://api.ishowchina.com/v4/webapi/js/auth?v=3.6.3&t=jsmap&ak=ec85d3648154874552835438ac6a02b2"></script>-->
+
+    <script>
+        var IMAP_CONFIG = {
+            JSMAP_SERVICE_URL: "http://webapi.ishowchina.com/jsmap/",
+            JSMAP_SERVICE_VERSION: "3.6.3",
+            MSP_SERVICE_URL: "http://api.ishowchina.com/",
+            KEY: "ec85d3648154874552835438ac6a02b2",
+            COPYRIGHT: "<span>©2016 ishowchina - GS(2016)3158号 - Data © Leador </span><span> | <a target='_blank' href='http://www.ishowchina.com' style='color: #44b79d;'>我秀中国</a> | <a target='_blank' href='http://dev.ishowchina.com' style='color: #44b79d;'>开放平台</a> | <a target='_blank' href='http://about.ishowchina.com' style='color: #44b79d;'>关于我们</a> </span>",
+            TILE_URL: ["http://{s}.ishowchina.com/v3/tile/{z}/{x}/{y}.png", ["tile4", "tile5", "tile6"]],
+            VECTOR_TILE_URL: ""
+        };
+    </script>
+    <link rel="stylesheet" href="http://webapi.ishowchina.com/jsmap/3.6.3/imap.css" />
+    <script type="text/javascript" src="http://webapi.ishowchina.com/jsmap/3.6.3/imap.js"></script>
+    <script type="text/javascript" src="http://webapi.ishowchina.com/jsmap/3.6.3/main.js"></script>
+    <script type="text/javascript" src="http://webapi.ishowchina.com/jsmap/3.6.3/flash/LeadorStreetView.js"></script>
+    <script type="text/javascript" src="http://webapi.ishowchina.com/jsmap/3.6.3/user.js"></script>
+    <script type="text/javascript" src="http://webapi.ishowchina.com/jsmap/3.6.3/callback.js"></script>
+
+    <!--mapbox-->
+    <link type="text/css" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet" />
+    <link type="text/css" rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css" />
+    <script type="text/javascript" src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.0/mapbox-gl-draw.js'></script>
+    <script type="text/javascript" src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
+    <script type="text/javascript" src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+    <!-- <script type="text/javascript" src='src/boundaries.js'></script> -->
+
+    <!--leafletjs-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+
+    <!-- inmap -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xhQP2QykX8PAjDCkMF7MY08Fun7qk6C0"></script>
+    <script src="http://inmap.iviewui.com/inmap/inmap.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>

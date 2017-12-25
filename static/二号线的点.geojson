@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "二号线的点",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "name": "桐乡客运站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "2号线" }, "geometry": { "type": "Point", "coordinates": [ 13423201.914018182083964, 3581278.589022052008659 ] } },
+{ "type": "Feature", "properties": { "Id": 2, "name": "会展中心站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "2号线" }, "geometry": { "type": "Point", "coordinates": [ 13442823.453261261805892, 3598487.123439120594412 ] } },
+{ "type": "Feature", "properties": { "Id": 1, "name": "空港站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "2号线" }, "geometry": { "type": "Point", "coordinates": [ 13437489.442593241110444, 3594740.61594610568136 ] } },
+{ "type": "Feature", "properties": { "Id": 3, "name": "中港城站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "2号线" }, "geometry": { "type": "Point", "coordinates": [ 13446315.957960437983274, 3598494.594415767118335 ] } },
+{ "type": "Feature", "properties": { "Id": 4, "name": "嘉善站", "typecode": 150500, "type": "交通设施服务：地铁站", "addres": "2号线" }, "geometry": { "type": "Point", "coordinates": [ 13457809.483233321458101, 3609409.145283163990825 ] } }
+]
+}
