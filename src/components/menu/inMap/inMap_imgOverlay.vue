@@ -13,7 +13,7 @@
         name: "",
         data() {
             return {
-                inmap: null,
+                inmap: null
             }
         },
         components: {},
@@ -23,7 +23,7 @@
         methods: {
             initMap() {
                 let dom = this.$refs.map;
-                
+
               this.inmap = new inMap.Map({
                     id: dom,
                     skin: "Blueness", //Blueness WhiteLover
