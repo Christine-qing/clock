@@ -1,10 +1,15 @@
 <template>
-    <div ref='map' id='map'>
+    <div>
+        <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+        <div ref='map' id='map'>
+        </div>
     </div>
 </template>
 
 <script>
-import {marker} from '../../../assets/data/inmap_data'
+    import {
+        marker
+    } from '../../../assets/data/inmap_data'
     export default {
         name: "",
         data() {
@@ -29,11 +34,8 @@ import {marker} from '../../../assets/data/inmap_data'
                         max: 18,
                         min: 5
                     },
-                  
                 });
-                  inmap.getMap().enableScrollWheelZoom()
-
-             
+                inmap.getMap().enableScrollWheelZoom()
                 var overlay = new inMap.DotOverlay({
                     style: {
                         normal: {
@@ -45,7 +47,7 @@ import {marker} from '../../../assets/data/inmap_data'
                         }
                     },
                     data: marker,
-                });         
+                });
                 inmap.add(overlay);
             }
         }
@@ -62,7 +64,7 @@ import {marker} from '../../../assets/data/inmap_data'
     }
     #map {
         position: absolute;
-        top: 0;
+        top: 30px;
         bottom: 0;
         width: 100%;
     }

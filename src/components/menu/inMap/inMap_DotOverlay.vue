@@ -1,6 +1,9 @@
 <template>
-    <div ref='map' id='map'>
-    </div>
+<div>
+     <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+     <div ref='map' id='map'></div>
+</div>
+    
 </template>
 
 <script>
@@ -93,7 +96,7 @@
     }
     #map {
         position: absolute;
-        top: 0;
+        top: 30px;
         bottom: 0;
         width: 100%;
     }

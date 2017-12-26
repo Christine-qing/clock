@@ -1,12 +1,14 @@
 <template>
-    <div ref='map' id='map'>
-    </div>
+<div>
+    <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+     <div ref='map' id='map'></div>
+</div>
+   
 </template>
 
 <script>
     import {
         marker,
-        
         point
     } from "../../../assets/data/inmap_data";
     import img from "../../../assets/logo.png";
@@ -99,7 +101,7 @@
     }
     #map {
         position: absolute;
-        top: 0;
+        top: 30px;
         bottom: 0;
         width: 100%;
     }
