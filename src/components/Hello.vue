@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-     <Button ><router-link to="menuPage">菜单</router-link></Button> 
+        <Button><router-link to="menuPage">菜单</router-link></Button>
         <!--<h1>{{ msg }}</h1>-->
         <div class="clock">
             <!--钟表-->
@@ -8,13 +8,11 @@
             <div class="three">3</div>
             <div class="six">6</div>
             <div class="nine">9</div>
-
             <!--时 分 秒 各指针-->
             <div class="second" v-bind:style="{transform:'rotate('+inif.seconds+'deg)'}"></div>
             <div class="minute" v-bind:style="{transform:'rotate('+inif.minute+'deg)'}"></div>
             <div class="hour" v-bind:style="{transform:'rotate('+inif.hour+'deg)'}"></div>
             <div class="core"></div>
-            
         </div>
         <!--电子表-->
         <div class="now">
@@ -37,11 +35,7 @@
             <div class="pageText">{{inif.text}}</div>
             <div class="close" v-on:click="close">×</div>
         </div>
-        
         <div @click="foo()">{{count}}</div>
-        
-    
-        
     </div>
 </template>
 
@@ -50,7 +44,7 @@
         name: 'hello',
         data() {
             return {
-            	count:0,
+                count: 0,
                 //   msg: 'clock',
                 inif: {
                     oHour: 0,
@@ -61,7 +55,6 @@
                     rotate: 0,
                     minute: 0,
                     hour: 0,
-                    
                 },
                 oTopPage: null,
                 isDisplay: "block",
@@ -81,7 +74,6 @@
             init() {
                 //    this.clock=clock;
             },
-            
             time() {
                 let myDate = new Date();
                 let hours = myDate.getHours();
@@ -141,8 +133,8 @@
                     this.text = "打开"
                 }
             },
-            foo(){
-            	this.count++
+            foo() {
+                this.count++
             }
         }
     }
