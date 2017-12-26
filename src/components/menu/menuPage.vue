@@ -89,7 +89,8 @@
         <template slot="title"><Icon type="stats-bars"></Icon>inMap</template>
                 <MenuItem name="11-1"><router-link to="inMap_test">inMap_test</router-link></MenuItem>        
                 <MenuItem name="11-2"><router-link to="inMap_DotOverlay">inMap_DotOverlay</router-link></MenuItem>        
-                <MenuItem name="11-2"><router-link to="inMap_imgOverlay">inMap_imgOverlay</router-link></MenuItem>        
+                <MenuItem name="11-3"><router-link to="inMap_imgOverlay">inMap_imgOverlay</router-link></MenuItem>        
+                <MenuItem name="11-4"><router-link to="inMap_BoundaryOverlay">inMap_BoundaryOverlay</router-link></MenuItem>        
      
       </Submenu>
     </Menu>

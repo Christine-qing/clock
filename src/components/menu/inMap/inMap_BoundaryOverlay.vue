@@ -1,39 +1,45 @@
 <template>
-    <div ref='map' id='map'>
+    <div>
+        <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+        <div ref='map' id='map'></div>
     </div>
 </template>
 
 <script>
-import {marker,point} from '../../../assets/data/inmap_data'
+    import {
+        marker,
+        point
+    } from '../../../assets/data/inmap_data'
     export default {
         name: "",
         data() {
             return {
-                map: null,
+                inmap: null,
             }
         },
         components: {},
         mounted() {
             this.initMap();
+            this.addDotOverlay();
+            // this.transition();
         },
         methods: {
             initMap() {
                 let dom = this.$refs.map;
-                var inmap = new inMap.Map({
+                this.inmap = new inMap.Map({
                     id: dom,
-                    skin: "Blueness", //Blueness WhiteLover
+                    skin: "Blueness WhiteLover ", //Blueness WhiteLover  Blueness
                     center: [120.88, 30.52],
                     zoom: {
-                        value: 10,
+                        value: 11,
                         show: true,
                         max: 18,
                         min: 5
                     },
-                  
                 });
-                  inmap.getMap().enableScrollWheelZoom()
-
-             
+                this.inmap.getMap().enableScrollWheelZoom()
+            },
+            addDotOverlay() {
                 var overlay = new inMap.DotOverlay({
                     style: {
                         normal: {
@@ -42,7 +48,8 @@ import {marker,point} from '../../../assets/data/inmap_data'
                             shadowBlur: 35, // 投影模糊级数
                             globalCompositeOperation: "lighter", // 颜色叠加方式
                             size: 5 // 半径
-                        }
+                        },
+                        
                     },
                     data: marker,
                 });
@@ -50,7 +57,6 @@ import {marker,point} from '../../../assets/data/inmap_data'
                     tooltip: {
                         show: true,
                         formatter: function(point) {
-                             debugger
                             return (
                                 '<div style="white-space: nowrap;z-index: 9999999;transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1);background-color: rgb(255, 255, 255);font-style: normal;font-variant: normal;font-weight: normal;font-stretch: normal;font-size: 14px;font-family: &quot;Microsoft YaHei&quot;;line-height: 21px;padding: 5px 15px;left: 350.544px;top: -7px;border-radius: 2px;">' +
                                 ' <div class="echart-tool-tips">' +
@@ -75,30 +81,66 @@ import {marker,point} from '../../../assets/data/inmap_data'
                     },
                     style: {
                         normal: {
-                            backgroundColor: "pink", // 填充颜色
-                            // shadowColor: "pink", // 投影颜色
-                            shadowBlur: 35, // 投影模糊级数
-                            globalCompositeOperation: "lighter", // 颜色叠加方式
-                            size: 5 // 半径
+                            borderWidth: 1,
+                            borderColor: "#e0eefb",
+                            backgroundColor: "rgba(0,184,255,0.80)",
+                            label: {
+                                show: true, // 是否显示
+                                font: "10px bold ",
+                                color: "black"
+                            }
                         },
                         // 鼠标划过
                         mouseOver: {
-                            backgroundColor: "rgba(200, 200, 200, 0.5)",
+                            backgroundColor: "rgba(0,184,255,0.40)",
                             borderColor: "rgba(255,255,255,0.1)",
                             borderWidth: 1
                         },
                         // 是否选中
                         selected: {
                             borderWidth: 1,
-                            backgroundColor: "rgba(184,0,0,1)",
-                            borderColor: "rgba(255,255,255,1)"
+                            backgroundColor: "rgba(51,51,255,0.8)",
+                            borderColor: "rgba(255,255,255,1)",
+                            label: {
+                                show: true, // 是否显示
+                                font: "12px bold ",
+                                color: "#e0eefb"
+                            }
                         },
+                        // splitList: [{
+                        //         //设置区间颜色
+                        //         start: 0,
+                        //         end: 50000,
+                        //         backgroundColor: "red"
+                        //     },
+                        //     {
+                        //         start: 50000,
+                        //         end: 51000,
+                        //         backgroundColor: "rgba(156,200,249,0.7)"
+                        //     },
+                        //     {
+                        //         start: 51001,
+                        //         end: 52000,
+                        //         backgroundColor: "rgba(156,200,249,0.7)"
+                        //     },
+                        //     {
+                        //         start: 60000,
+                        //          backgroundColor: "rgba(156,200,249,0.7)"
+                        //     }
+                        // ]
                     },
-                    data:point,
+                    data: point,
                 });
                 // inmap.add(overlay);
-                inmap.add(overlays)
-            }
+                this.inmap.add(overlays)
+            },
+            // transition(){
+            //   var arr=point;
+            //   console.log(arr);
+            //   for(var i=0;i<arr.length;i++){
+            //     console.log(arr[i])
+            //   }
+            // }
         }
     }
 </script>
@@ -113,7 +155,7 @@ import {marker,point} from '../../../assets/data/inmap_data'
     }
     #map {
         position: absolute;
-        top: 0;
+        top: 30px;
         bottom: 0;
         width: 100%;
     }

@@ -61,6 +61,8 @@ import createRegexp from '@/components/menu/regexp/createRegexp'
 import inMap_test from '@/components/menu/inMap/inMap_test'
 import inMap_DotOverlay from '@/components/menu/inMap/inMap_DotOverlay'
 import inMap_imgOverlay from '@/components/menu/inMap/inMap_imgOverlay'
+import inMap_BoundaryOverlay from '@/components/menu/inMap/inMap_BoundaryOverlay'
+
 Vue.use(Router)
 
 
@@ -317,6 +319,11 @@ export default new Router({
             path: '/inMap_imgOverlay',
             name: 'inMap_imgOverlay',
             component: inMap_imgOverlay
+        },
+        {
+            path: '/inMap_BoundaryOverlay',
+            name: 'inMap_BoundaryOverlay',
+            component: inMap_BoundaryOverlay
         }
 
 
