@@ -62,6 +62,9 @@ import inMap_test from '@/components/menu/inMap/inMap_test'
 import inMap_DotOverlay from '@/components/menu/inMap/inMap_DotOverlay'
 import inMap_imgOverlay from '@/components/menu/inMap/inMap_imgOverlay'
 import inMap_BoundaryOverlay from '@/components/menu/inMap/inMap_BoundaryOverlay'
+import inMap_ColorBoundaryOverlay from '@/components/menu/inMap/inMap_ColorBoundaryOverlay'
+import inMap_CircuitOverlay from '@/components/menu/inMap/inMap_CircuitOverlay'
+
 
 Vue.use(Router)
 
@@ -324,6 +327,15 @@ export default new Router({
             path: '/inMap_BoundaryOverlay',
             name: 'inMap_BoundaryOverlay',
             component: inMap_BoundaryOverlay
+        },
+        {
+            path: '/inMap_ColorBoundaryOverlay',
+            name: 'inMap_ColorBoundaryOverlay',
+            component: inMap_ColorBoundaryOverlay
+        },{
+            path: '/inMap_CircuitOverlay',
+            name: 'inMap_CircuitOverlay',
+            component: inMap_CircuitOverlay
         }
 
 

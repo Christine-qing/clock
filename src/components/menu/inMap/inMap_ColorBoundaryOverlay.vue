@@ -62,11 +62,12 @@
                                 " </div>" +
                                 ' <div class="time-line clearfix">' +
                                 ' <span class="time-label">id : </span><span class="time-value">' +
-                                point.id +
+                                point.id + "," +
+                                point.count +
                                 "</span>" +
                                 " </div>" +
                                 ' <div class="series-line clearfix">' +
-                                ' <span class="circle" style="border-color:#ffd019">板块名称：<span class="series-value" style="color:blue">' +
+                                ' <span class="circle" style="border-color:#ffd019">板块名称：<span class="series-value" style="color:rgba(204,102,51,1)">' +
                                 point.name +
                                 "</span></div></div></div>"
                             );
@@ -77,11 +78,15 @@
                         },
                         customClass: "customize"
                     },
+                    legend: {
+                        show: true,
+                        title: "幸福指数"
+                    },
                     style: {
                         normal: {
                             borderWidth: 1,
                             borderColor: "#e0eefb",
-                            backgroundColor: "rgba(0,184,255,0.80)",
+                            backgroundColor: "rgba(255,0,102,1)",
                             label: {
                                 show: true, // 是否显示
                                 font: "10px bold ",
@@ -90,14 +95,16 @@
                         },
                         // 鼠标划过
                         mouseOver: {
-                            backgroundColor: "rgba(0,184,255,0.40)",
+                            // backgroundColor: "rgba(0,184,255,0.40)",
+                            shadowColor: "rgba(0, 0, 0, 1)",
                             borderColor: "rgba(255,255,255,0.1)",
                             borderWidth: 1
                         },
                         // 是否选中
                         selected: {
                             borderWidth: 1,
-                            backgroundColor: "rgba(51,51,255,0.8)",
+                            // backgroundColor: "rgba(51,51,255,0.8)",
+                            shadowColor: "rgba(0, 0, 0, 1)",
                             borderColor: "rgba(255,255,255,1)",
                             label: {
                                 show: true, // 是否显示
@@ -105,11 +112,33 @@
                                 color: "#e0eefb"
                             }
                         },
+                        splitList: [{
+                                //设置区间颜色
+                                start: 0,
+                                end: 2,
+                                backgroundColor: "rgba(255,204,204,1)"
+                            },
+                            {
+                                start: 2,
+                                end: 5,
+                                backgroundColor: "rgba(255,153,153,1)"
+                            },
+                            {
+                                start: 5,
+                                end: 8,
+                                backgroundColor: "rgba(255,102,102,1)"
+                            },
+                            {
+                                start: 8,
+                                // end: 20,
+                                backgroundColor: "rgba(255,51,0,1)"
+                            }
+                        ]
                     },
                     data: point,
                 });
+                // inmap.add(overlay);
                 this.inmap.add(overlays)
-                
             },
         }
     }
