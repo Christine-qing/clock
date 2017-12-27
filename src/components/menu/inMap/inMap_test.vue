@@ -14,17 +14,18 @@
         name: "",
         data() {
             return {
-                map: null,
+                inmap: null,
             }
         },
         components: {},
         mounted() {
             this.initMap();
+            this.addDotOverlay();
         },
         methods: {
             initMap() {
                 let dom = this.$refs.map;
-                var inmap = new inMap.Map({
+                this.inmap = new inMap.Map({
                     id: dom,
                     skin: "Blueness", //Blueness WhiteLover
                     center: [105.403119, 38.028658],
@@ -35,7 +36,9 @@
                         min: 5
                     },
                 });
-                inmap.getMap().enableScrollWheelZoom()
+                this.inmap.getMap().enableScrollWheelZoom();
+            },
+            addDotOverlay() {
                 var overlay = new inMap.DotOverlay({
                     style: {
                         normal: {
@@ -48,7 +51,7 @@
                     },
                     data: marker,
                 });
-                inmap.add(overlay);
+                this.inmap.add(overlay);
             }
         }
     }

@@ -65,12 +65,10 @@
                             borderWidth: 1
                         }
                     },
-                    // data:this.circuitData
 
                 });
                 inmap.add(overlay);
                 overlay.setPoints(this.circuitData);
-                // overlay.setZIndex(1000)
             },
         }
     }

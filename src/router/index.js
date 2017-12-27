@@ -64,6 +64,9 @@ import inMap_imgOverlay from '@/components/menu/inMap/inMap_imgOverlay'
 import inMap_BoundaryOverlay from '@/components/menu/inMap/inMap_BoundaryOverlay'
 import inMap_ColorBoundaryOverlay from '@/components/menu/inMap/inMap_ColorBoundaryOverlay'
 import inMap_CircuitOverlay from '@/components/menu/inMap/inMap_CircuitOverlay'
+import inMap_GriddingOverlay from '@/components/menu/inMap/inMap_GriddingOverlay'
+import inMap_HoneycombOverlay from '@/components/menu/inMap/inMap_HoneycombOverlay'
+import inMap_HeatOverlay from '@/components/menu/inMap/inMap_HeatOverlay'
 
 
 Vue.use(Router)
@@ -336,7 +339,23 @@ export default new Router({
             path: '/inMap_CircuitOverlay',
             name: 'inMap_CircuitOverlay',
             component: inMap_CircuitOverlay
+        },
+        {
+            path: '/inMap_GriddingOverlay',
+            name: 'inMap_GriddingOverlay',
+            component: inMap_GriddingOverlay
+        },
+        {
+            path: '/inMap_HoneycombOverlay',
+            name: 'inMap_HoneycombOverlay',
+            component: inMap_HoneycombOverlay
+        },
+        {
+            path: '/inMap_HeatOverlay',
+            name: 'inMap_HeatOverlay',
+            component: inMap_HeatOverlay
         }
+
 
 
     ]

@@ -93,6 +93,10 @@
                 <MenuItem name="11-4"><router-link to="inMap_BoundaryOverlay">普通围栏</router-link></MenuItem>        
                 <MenuItem name="11-5"><router-link to="inMap_ColorBoundaryOverlay">多色围栏</router-link></MenuItem>        
                 <MenuItem name="11-6"><router-link to="inMap_CircuitOverlay">线路</router-link></MenuItem>        
+                <MenuItem name="11-7"><router-link to="inMap_GriddingOverlay">网格聚合</router-link></MenuItem>        
+                <MenuItem name="11-8"><router-link to="inMap_HoneycombOverlay">蜂窝聚合</router-link></MenuItem>        
+                <MenuItem name="11-9"><router-link to="inMap_HeatOverlay">热力展示</router-link></MenuItem>        
+     
      
       </Submenu>
     </Menu>
