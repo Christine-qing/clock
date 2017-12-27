@@ -46,9 +46,9 @@
         methods: {
             initMap() {
                 let dom = this.$refs.map;
-                var inmap = new inMap.Map({
+               this.inmap = new inMap.Map({
                     id: dom,
-                    skin: "Blueness WhiteLover", //Blueness WhiteLover  Blueness
+                    skin: "Blueness", //Blueness WhiteLover  Blueness
                     center: [120.37396060329789, 30.530439105863827],
                     zoom: {
                         value: 11,
@@ -57,17 +57,17 @@
                         min: 5
                     },
                 });
-                inmap.getMap().enableScrollWheelZoom()
+                this.inmap.getMap().enableScrollWheelZoom()
                 var overlay = new inMap.CircuitOverlay({
                     style: {
                         normal: {
-                            borderColor: "red",
-                            borderWidth: 1
+                            borderColor: "yellow",
+                            borderWidth: 10
                         }
                     },
 
                 });
-                inmap.add(overlay);
+                this.inmap.add(overlay);
                 overlay.setPoints(this.circuitData);
             },
         }

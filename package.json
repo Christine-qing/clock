@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "echarts": "^3.6.2",
-    "inmap": "^1.1.1",
+    "inmap": "^1.2.1",
     "iview": "^2.7.3",
     "leaflet": "^1.2.0",
     "mapbox-gl": "^0.41.0",
