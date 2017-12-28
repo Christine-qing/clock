@@ -9,20 +9,22 @@ import 'iview/dist/styles/iview.css';
 import router from './router';
 import axios from 'axios';
 import echarts from 'echarts/dist/echarts.min.js';
-import store from './store/store'
+import store from './store/index'
 
-Vue.use(Vuex)
-Vue.prototype.$echarts = echarts;
+Vue.use(Vuex);
 Vue.use(iView);
-
 Vue.use(inMap);
-Vue.config.productionTip = false
+
+Vue.prototype.$echarts = echarts;
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    store,
-    template: '<App/>',
-    components: { App }
+  el: '#app',
+  router,
+  store,
+  template: '<App/>',
+  components: {
+    App
+  }
 })

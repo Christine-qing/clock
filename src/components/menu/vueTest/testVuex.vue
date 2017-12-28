@@ -1,30 +1,53 @@
 <template>
-  <div>
-    <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
-    <br><br><br><br>
-    <Button>{{msg}} </Button>
-    <Button @click="$store.commit('add')"> +</Button>
-    <Button @click="$store.commit('reduce')">-</Button>
-    <Button>{{$store.state.count}}</Button>
-  </div>
+    <div >
+        <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+        <br> <br>
+        <Button type="ghost" @click="add({
+                    type: 'addNumber',
+                    amount: 3,
+                    isUse :true
+                })">点击改变</Button>
+                <Button>{{index.current}}</Button>
+    </div>
 </template>
-
 <script>
-  import store from "@/store/store"
-  export default {
-    name: "",
-    data() {
-      return {
-        msg: 1
-      }
+import * as types from '../../../store/mutation-types'
+import {
+    mapState,
+    mapActions,
+    mapMutations
+} from 'vuex'
+
+export default {
+    components: {
+
     },
-    // store,
-    components: {},
-    mounted() {},
-    methods: {}
-  }
+    data() {
+        return {
+
+        }
+    },
+    created() {
+        this.init()
+    },
+    mounted() {
+
+    },
+    methods: {
+        init() {
+
+
+        },
+        ...mapActions({
+            add: 'addNumber' // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`
+        }),
+    },
+    computed: {
+
+        ...mapState(['index'])
+    },
+}
 </script>
-
-<style scoped>
-
+<style lang='scss' scoped>
+   
 </style>
