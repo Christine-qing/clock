@@ -9,7 +9,7 @@ import 'iview/dist/styles/iview.css';
 import router from './router';
 import axios from 'axios';
 import echarts from 'echarts/dist/echarts.min.js';
-// import storeConfig from '../vuex/store'
+import store from './store/store'
 
 Vue.use(Vuex)
 Vue.prototype.$echarts = echarts;
@@ -22,7 +22,7 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     router,
-    // storeConfig,
+    store,
     template: '<App/>',
     components: { App }
 })
