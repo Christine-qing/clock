@@ -54,29 +54,29 @@
                             size:20,
                             padding: 1
                         },
-                        //   colors: ["#7EF3D4", "#49EEC3", "#10E9B0", "#0ECA9C", "#0CAA88"]
-                        // splitList: [{
-                        //         //设置区间颜色
-                        //         start: 0,
-                        //         end: 2,
-                        //         backgroundColor: "rgba(255,204,204,1)"
-                        //     },
-                        //     {
-                        //         start: 2,
-                        //         end: 5,
-                        //         backgroundColor: "rgba(255,153,153,1)"
-                        //     },
-                        //     {
-                        //         start: 5,
-                        //         end: 8,
-                        //         backgroundColor: "rgba(255,102,102,1)"
-                        //     },
-                        //     {
-                        //         start: 8,
-                        //         // end: 20,
-                        //         backgroundColor: "rgba(255,51,0,1)"
-                        //     }
-                        // ]
+                    // colors: ["#7EF3D4", "#49EEC3", "#10E9B0", "#0ECA9C", "#0CAA88"]
+                        splitList: [{
+                                //设置区间颜色
+                                start: 0,
+                                end: 2,
+                                backgroundColor: "rgba(255,204,204,1)"
+                            },
+                            {
+                                start: 2,
+                                end: 5,
+                                backgroundColor: "rgba(255,153,153,1)"
+                            },
+                            {
+                                start: 5,
+                                end: 8,
+                                backgroundColor: "rgba(255,102,102,1)"
+                            },
+                            {
+                                start: 8,
+                                // end: 20,
+                                backgroundColor: "rgba(255,51,0,1)"
+                            }
+                        ]
                     },
                     data: marker
                 });

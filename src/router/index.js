@@ -8,6 +8,9 @@ import myGame from '@/components/menu/gameDemo/myGame'
 
 import axios from '@/components/menu/vueTest/axios'
 import vuetest from '@/components/menu/vueTest/vuetest'
+import testVuex from '@/components/menu/vueTest/testVuex'
+
+
 
 import lide from '@/components/menu/ishowMap/lideTest'
 import busTrip from '@/components/menu/ishowMap/busTrip'
@@ -354,6 +357,11 @@ export default new Router({
             path: '/inMap_HeatOverlay',
             name: 'inMap_HeatOverlay',
             component: inMap_HeatOverlay
+        },
+        {
+            path: '/testVuex',
+            name: 'testVuex',
+            component: testVuex
         }
 
 

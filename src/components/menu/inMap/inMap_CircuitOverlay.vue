@@ -61,14 +61,16 @@
                 var overlay = new inMap.CircuitOverlay({
                     style: {
                         normal: {
-                            borderColor: "yellow",
+                            borderColor: "rgba(255,255,255,1)",
                             borderWidth: 10
                         }
                     },
+                    data:this.circuitData
+                    
 
                 });
                 this.inmap.add(overlay);
-                overlay.setPoints(this.circuitData);
+                // overlay.setPoints(this.circuitData);
             },
         }
     }
