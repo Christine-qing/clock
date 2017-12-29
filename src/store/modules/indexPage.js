@@ -1,5 +1,6 @@
 
-//粗暴的引入mutation-types的全部
+
+//粗暴的引入
 import * as types from '../mutation-types'
 
 
