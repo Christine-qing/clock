@@ -9,6 +9,7 @@ import myGame from '@/components/menu/gameDemo/myGame'
 import axios from '@/components/menu/vueTest/axios'
 import vuetest from '@/components/menu/vueTest/vuetest'
 import testVuex from '@/components/menu/vueTest/testVuex'
+import testVuex2 from '@/components/menu/vueTest/testVuex2'
 
 
 
@@ -362,7 +363,12 @@ export default new Router({
             path: '/testVuex',
             name: 'testVuex',
             component: testVuex
-        }
+        },
+        {
+            path: '/testVuex2',
+            name: 'testVuex2',
+            component: testVuex2
+        },
 
 
 

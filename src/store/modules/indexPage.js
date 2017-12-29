@@ -38,41 +38,68 @@
 
 
 
-
+//粗暴的引入mutation-types的全部
 import * as types from '../mutation-types'
 
 
 const state = {
-    current: 0,
+  current: 0,
+  count: 1,
 }
 
 const getters = {
-    // todos: (state, getters) => {
-    //     return state.count * 2;
-    // }
+  evenOrOdd: (state) => {
+    state.count % 2 === 0 ? '偶数' : '奇数'
+  }
 }
 
 const mutations = {
-    [types.ADD_NUMBER]: (state, payload) => {
-       // console.log('payload is ',payload)
-        state.current += payload.amount;
-    },
+  [types.ADD_NUMBER]: (state, payload) => {
+    // console.log('payload is ',payload)
+    state.current += payload.amount;
+  },
+  increment(state) {
+    state.count++
+  },
+  decrement(state) {
+    state.count--
+  }
 }
 
 const actions = {
-    addNumber({commit},payload){
-        commit(types.ADD_NUMBER,payload)
+  addNumber({commit}, payload) {
+    commit(types.ADD_NUMBER, payload)
+  },
+  increment: ({commit}) =>{ 
+    commit('increment')
+  },
+
+  decrement: ({commit}) => {
+    commit('decrement')
+  },
+
+  incrementIfOdd({commit,state}) {
+    if ((state.count + 1) % 2 === 0) {
+      commit('increment')
     }
+  },
+  incrementAsync({
+    commit
+  }) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        commit('increment')
+        resolve()
+      }, 5000)
+    })
+  }
 }
 
 
-
+// 最后将所有方法导出
 export default {
-    state,
-    getters,
-    actions,
-    mutations
+  state,
+  getters,
+  actions,
+  mutations
 }
-
-
-
