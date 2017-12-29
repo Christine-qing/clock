@@ -7,7 +7,7 @@
     <Button @click="decrement">-</Button>
     <Button @click="incrementIfOdd">奇数变偶数</Button>
     <Button @click="incrementAsync">异步添加</Button>
-    vuex2
+    
   </div>
 </template>
 
@@ -22,7 +22,12 @@ export default {
     'increment',
     'decrement',
     'incrementIfOdd',
-    'incrementAsync'
-  ])
+    'incrementAsync',
+   
+  ]),
+
+
+
+
 }
 </script>
