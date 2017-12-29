@@ -1,102 +1,70 @@
-// import * as types from './mutation-types'
-
-// export const state = {
-//     count:1,
-//     current:2
-// }
-
-// //actions里面的时间会触发mutation里的事件，来改变state，外部会调用state
-// export const mutations={
-//     add(state){
-//         state.count+=1;
-//     },
-//     reduce(state){
-//         state.count-=1;
-//     },
-//     changeData:(state,payload)=>{
-//         state.current += payload.amount
-//     }
-// };
-
-
-
-
-// const actions = {
-//     addNumber({commit},payload){
-//         commit(types.ADD_NUMBER,payload)
-//     }
-// }
-
-// //外部调用 会触发actions里面的方法，这里列举一个例子foo
-// // export const actions={
-// //     foo(context,data){
-// //       context.commit('add',data)
-// //     }
-// // }
-
-// //这里的mutation是固定的写法，意思是改变的，所以你先不用着急，只知道我们要改变state的数值的方法，必须写在mutations里就可以了
-
-
 
 //粗暴的引入mutation-types的全部
 import * as types from '../mutation-types'
 
 
 const state = {
-  current: 0,
-  count: 1,
+  current: 0, //第一个vuex示例
+  count:1,   //第二个vuex示例
 }
-
+//获取
 const getters = {
-  evenOrOdd: (state) => {
-    state.count % 2 === 0 ? '偶数' : '奇数'
-  }
+  evenOrOdd: state => state.count % 2 === 0 ? '偶数' : '奇数',
+  data:state=>state.count
 }
 
+//改变
 const mutations = {
+
+  //第一个vuex示例
   [types.ADD_NUMBER]: (state, payload) => {
     // console.log('payload is ',payload)
     state.current += payload.amount;
   },
+  //第二个vuex示例
   increment(state) {
     state.count++
   },
+
   decrement(state) {
     state.count--
-  }
+  },
+
 }
 
+//调用mutations来实现改变
 const actions = {
+
+  //第一个示例
   addNumber({commit}, payload) {
     commit(types.ADD_NUMBER, payload)
   },
-  increment: ({commit}) =>{ 
-    commit('increment')
-  },
 
-  decrement: ({commit}) => {
-    commit('decrement')
-  },
+  // 第二个示例
+  increment: ({commit}) => commit('increment'),
+
+  decrement: ({commit}) => commit('decrement'),
 
   incrementIfOdd({commit,state}) {
     if ((state.count + 1) % 2 === 0) {
+      debugger
       commit('increment')
     }
   },
-  incrementAsync({
-    commit
-  }) {
+
+  //异步实现
+  incrementAsync({commit}) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         commit('increment')
         resolve()
-      }, 5000)
+      }, 1000)
     })
   }
 }
 
 
-// 最后将所有方法导出
+//一并导出所有方法
 export default {
   state,
   getters,
