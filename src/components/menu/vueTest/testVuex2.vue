@@ -18,13 +18,14 @@ export default {
     'evenOrOdd',
     'data'
   ]),
-  methods: mapActions([
+  methods: {
+    ...mapActions([
     'increment',
     'decrement',
     'incrementIfOdd',
     'incrementAsync',
    
-  ]),
+  ])},
 
 
 
