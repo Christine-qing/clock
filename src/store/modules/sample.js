@@ -14,6 +14,7 @@ const getters = {
 }
 
 //改变
+//这里的mutation是固定的写法，意思是改变的，所以你先不用着急，只知道我们要改变state的数值的方法，必须写在mutations里就可以了
 const mutations = {
 
   //第一个vuex示例

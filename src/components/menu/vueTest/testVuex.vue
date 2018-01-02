@@ -7,7 +7,7 @@
                         amount: 3,
                         isUse :true
                     })">点击改变</Button>
-        <Button>{{index.current}}</Button>
+        <Button>{{sample.current}}</Button>
     </div>
 </template>
 
@@ -35,7 +35,7 @@
             }),
         },
         computed: {
-            ...mapState(['index'])
+            ...mapState(['sample'])
         },
     }
 </script>
