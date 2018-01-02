@@ -7,37 +7,33 @@
                         amount: 3,
                         isUse :true
                     })">点击改变</Button>
-        <Button>{{sample.current}}</Button>
+        <Button>{{sample_mo.current}}</Button> 
+        <Button>{{current}}</Button>  
+        <br><Button>{{sample_mo.number}}</Button><br>
+        <Button>{{number}}</Button>
     </div>
 </template>
 
 <script>
-    import * as types from '../../../store/mutation-types'
-    import {
-        mapState,
-        mapActions,
-        mapMutations
-    } from 'vuex'
-    export default {
-        components: {
-        },
-        data() {
-            return {
-            }
-        },
-        created() {
-        },
-        mounted() {
-        },
-        methods: { 
-            ...mapActions({
-                add: 'addNumber' // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`
-            }),
-        },
-        computed: {
-            ...mapState(['sample'])
-        },
-    }
+import * as types from "../../../store/mutation-types";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+export default {
+  components: {},
+  data() {
+    return {};
+  },
+  created() {},
+  mounted() {},
+  methods: {
+    ...mapActions({
+      add: "addNumber" // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`
+    })
+  },
+  computed: {
+    ...mapState(["sample_mo"]), // 一次性引入sample_mo的所有state ,调用{{sample_mo.current}}
+    ...mapGetters(["current","number"]), //引入所有sample里getter里的所有的内容，调用{{number}}
+  }
+};
 </script>
 
 <style lang='scss' scoped>

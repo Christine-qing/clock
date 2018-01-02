@@ -2,7 +2,7 @@
   <div id="app">
       <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
  <br>
-    count值为： {{ data }} , 当前是 {{ evenOrOdd }}.
+    count值为： {{ count }} , 当前是 {{ evenOrOdd }}.
     <Button @click="increment">+</Button>
     <Button @click="decrement">-</Button>
     <Button @click="incrementIfOdd">奇数变偶数</Button>
@@ -16,7 +16,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: mapGetters([
     'evenOrOdd',
-    'data'
+    'count'
   ]),
   methods: {
     ...mapActions([
