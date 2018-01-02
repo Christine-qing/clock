@@ -35,12 +35,12 @@ const actions = {
     commit
   }) => commit('decrement'),
 
+  //先判断当前的值，然后再进行操作
   incrementIfOdd({
     commit,
     state
   }) {
     if ((state.count + 1) % 2 === 0) {
-      debugger
       commit('increment')
     }
   },

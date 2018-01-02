@@ -8,8 +8,8 @@ import myGame from '@/components/menu/gameDemo/myGame'
 
 import axios from '@/components/menu/vueTest/axios'
 import vuetest from '@/components/menu/vueTest/vuetest'
-import testVuex from '@/components/menu/vueTest/testVuex'
-import testVuex2 from '@/components/menu/vueTest/testVuex2'
+import testVuex_mo from '@/components/menu/vueTest/testVuex_mo'
+import testVuex_yin from '@/components/menu/vueTest/testVuex_yin'
 
 
 
@@ -360,14 +360,14 @@ export default new Router({
             component: inMap_HeatOverlay
         },
         {
-            path: '/testVuex',
-            name: 'testVuex',
-            component: testVuex
+            path: '/testVuex_mo',
+            name: 'testVuex_mo',
+            component: testVuex_mo
         },
         {
-            path: '/testVuex2',
-            name: 'testVuex2',
-            component: testVuex2
+            path: '/testVuex_yin',
+            name: 'testVuex_yin',
+            component: testVuex_yin
         },
 
 

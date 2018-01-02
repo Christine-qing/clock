@@ -4,7 +4,7 @@ import * as actions from './actions';
 import getters from './getters';
 import * as mutations from './mutations'
 import sample_mo from './modules/sample_mo'  
-import sample from './modules/sample' 
+import sample_yin from './modules/sample_yin' 
 
 
 Vue.use(Vuex);
@@ -16,7 +16,7 @@ export default new Vuex.Store({
     actions,
     mutations,
     modules: {
-        sample,
+        sample_yin,
         sample_mo,
     }
 });

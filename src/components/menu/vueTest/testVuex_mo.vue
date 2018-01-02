@@ -11,6 +11,7 @@
         <Button>{{current}}</Button>  
         <br><Button>{{sample_mo.number}}</Button><br>
         <Button>{{number}}</Button>
+        <p>{{sample_mo.center}}</p>
     </div>
 </template>
 
@@ -26,8 +27,9 @@ export default {
   mounted() {},
   methods: {
     ...mapActions({
-      add: "addNumber" // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`
-    })
+      add: "addNumber", // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`
+      
+   })
   },
   computed: {
     ...mapState(["sample_mo"]), // 一次性引入sample_mo的所有state ,调用{{sample_mo.current}}

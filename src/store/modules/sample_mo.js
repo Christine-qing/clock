@@ -4,29 +4,35 @@ import * as types from '../mutation-types'
 
 const state = {
   current: 0,
-  number:3,
+  number: 3,
+  center:"116.39,39.99"
 }
 
 //获取
 const getters = {
   current: state => state.current,
-  number:state=> state.number,
+  number: state => state.number,
+  center:state=>state.center,
 }
-
-//这里的mutation是固定的写法，意思是改变的，所以你先不用着急，只知道我们要改变state的数值的方法，必须写在mutations里就可以了
+//如何改变
 const mutations = {
   [types.ADD_NUMBER]: (state, payload) => {
-    console.log('payload is ',payload,'state:',state)
-    debugger
+    // console.log('payload is ',payload,'state:',state)
     state.current += payload.amount;
+  },
+  [types.SET_CENTER]: (state, payload) => {
+    // console.log('payload is ',payload,'state:',state)
+    state.center = center
   },
 }
 
 //调用mutations来实现改变
 const actions = {
   addNumber({commit}, payload) {
-    debugger
     commit(types.ADD_NUMBER, payload)
+  },
+  setCenter({commit}, payload) {
+    commit(types.SET_CENTER, payload)
   },
 }
 
