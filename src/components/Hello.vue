@@ -3,7 +3,7 @@
         <Button><router-link to="menuPage">菜单</router-link></Button>
         <!--<h1>{{ msg }}</h1>-->
         <div class="clock">
-            <!--钟表-->       
+            <!--钟表-->
             <div class="twelve">12</div>
             <div class="three">3</div>
             <div class="six">6</div>
@@ -28,6 +28,23 @@
             </div>
             <div class="dsecond">{{inif.oSecond}}</div>
         </div>
+<!-- 翻页电子表 -->
+       <div class="now reversalClock">
+            <div class="dhour">{{inif.oHour}}</div>
+            <div class="colon">
+                <div class="colon1"></div>
+                <div class="colon1"></div>
+            </div>
+            <div class="dminute">{{inif.oMinute}}</div>
+            <div class="colon">
+                <div class="colon1"></div>
+                <div class="colon1"></div>
+            </div>
+            <div class="dsecond">{{inif.oSecond}}</div>
+            <div class="dsecond newSencond" >{{inif.oSecond}}</div>
+        </div>
+
+
         <div class="bottomCover" :style="{display:isDisplay}">
         </div>
         <!--问好框-->
@@ -35,7 +52,7 @@
             <div class="pageText">{{inif.text}}</div>
             <div class="close" v-on:click="close">×</div>
         </div>
-        <div @click="foo()">{{count}}</div>
+        <!-- <div @click="foo()">{{count}}</div> -->
     </div>
 </template>
 
@@ -149,6 +166,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        clear:both;
     }
     .clock {
         width: 300px;
@@ -207,8 +225,11 @@
         width: 400px;
         height: 100px;
         overflow: hidden;
-        margin: 20px auto;
+        /* margin: 20px auto; */
+        margin:20px 50px 0 250px;
+        float:left;
     }
+   
     .now .dhour,
     .now .dminute,
     .now .dsecond {
@@ -311,5 +332,26 @@
         color: deepskyblue;
         text-align: center;
         line-height: 200px;
+    }
+     .reversalClock{
+        width: 600px;
+        height: 100px;
+        overflow: hidden;
+        /* margin: 20px auto; */
+        margin:20px 0 0 50px
+    }
+   .reversalClock .newSencond{
+         width: 100px;
+        height: 100px;
+        border-radius: 4px;
+        background: deepskyblue;
+        margin-left: 100px;
+        float: left;
+        color: white;
+        font-size: 50px;
+        font-family: "微软雅黑";
+        font-weight: 600;
+        text-align: center;
+        line-height: 100px;
     }
 </style>
