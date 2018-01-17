@@ -7,7 +7,7 @@
       </MenuItem>
       <Submenu name="2">
         <template slot="title"><Icon type="stats-bars"></Icon>GAME</template>
-                <MenuItem name="2-1"><router-link to="SokobanGame">推箱子示例</router-link></MenuItem>
+                <MenuItem name="2-1"><router-link to="SokobanGame">推箱子</router-link></MenuItem>
                 <MenuItem name="2-2"> <router-link to="myGame">Mybox</router-link></MenuItem>
                 <MenuItem name="2-3">时段分析</MenuItem>   
       </Submenu>
@@ -22,7 +22,7 @@
         
           <!-- </MenuGroup>-->
         </Submenu>
-         <Submenu name="4">
+         <!-- <Submenu name="4">
         <template slot="title"><Icon type="stats-bars"></Icon>立德</template>
                 <MenuItem name="4-1"><router-link to="lideTest">九宫格</router-link></MenuItem>
                 <MenuItem name="4-2"><router-link to="busTrip">地铁公交查询</router-link></MenuItem>
@@ -31,27 +31,27 @@
                 <MenuItem name="4-5"><router-link to="anchor">锚点工具</router-link></MenuItem> 
                 <MenuItem name="4-6"><router-link to="point">打点工具</router-link></MenuItem> 
                 <MenuItem name="4-6"><router-link to="fenceCenter">中心点</router-link></MenuItem>      
-      </Submenu>
-        <Submenu name="5">
+      </Submenu> -->
+        <!-- <Submenu name="5">
         <template slot="title"><Icon type="stats-bars"></Icon>智数</template>
                 <MenuItem name="5-1"><router-link to="listPage">列表页面</router-link></MenuItem>
-                <MenuItem name="5-2"><router-link to="projectReport">项目报告页面</router-link></MenuItem>
+                <MenuItem name="5-2"><router-link to="projectReport">项目报告</router-link></MenuItem>
                 <MenuItem name="5-3"><router-link to="newProject">新建项目</router-link></MenuItem>  
                 <MenuItem name="5-4"><router-link to="reportForm">右侧报表</router-link></MenuItem>
                 <MenuItem name="5-5"></MenuItem>     
-      </Submenu>
+      </Submenu> -->
        <Submenu name="6">
         <template slot="title"><Icon type="stats-bars"></Icon>Echarts</template>
-                <MenuItem name="6-1"><router-link to="echartsBar">柱状图示例</router-link></MenuItem>
-                <MenuItem name="6-2"><router-link to="echartsLine">折线图示例</router-link></MenuItem>
-                <MenuItem name="6-3"><router-link to="echartsBarLine">折柱图示例</router-link></MenuItem>  
+                <MenuItem name="6-1"><router-link to="echartsBar">柱状图</router-link></MenuItem>
+                <MenuItem name="6-2"><router-link to="echartsLine">折线图</router-link></MenuItem>
+                <MenuItem name="6-3"><router-link to="echartsBarLine">折柱图</router-link></MenuItem>  
                 <MenuItem name="6-4"><router-link to="echartsPie">饼图</router-link></MenuItem>
                 <MenuItem name="6-5"></MenuItem>     
       </Submenu>
       <Submenu name="7">   
         <template slot="title"><Icon type="stats-bars"></Icon>iview</template>
                 <MenuItem name="7-1"><router-link to="menu">3级菜单</router-link></MenuItem>
-                <MenuItem name="7-2"><router-link to="table">table加颜色示例</router-link></MenuItem>  
+                <MenuItem name="7-2"><router-link to="table">table加颜色</router-link></MenuItem>  
                 <MenuItem name="7-2"><router-link to="upload">上传示例</router-link></MenuItem>                                    
       </Submenu>
       <Submenu name="8">   
@@ -101,6 +101,11 @@
      
      
       </Submenu>
+       <Submenu name="12">   
+        <template slot="title"><Icon type="stats-bars"></Icon>ts</template>
+                <MenuItem name="12-1"><router-link to="ts_init">ts_init</router-link></MenuItem>        
+      </Submenu>
+      
     </Menu>
  
 <div class='demoStyle'>

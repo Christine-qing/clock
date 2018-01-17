@@ -72,6 +72,9 @@ import inMap_GriddingOverlay from '@/components/menu/inMap/inMap_GriddingOverlay
 import inMap_HoneycombOverlay from '@/components/menu/inMap/inMap_HoneycombOverlay'
 import inMap_HeatOverlay from '@/components/menu/inMap/inMap_HeatOverlay'
 
+import ts_init from '@/components/menu/typeScript/ts_init'
+
+
 
 Vue.use(Router)
 
@@ -368,6 +371,11 @@ export default new Router({
             path: '/testVuex_yin',
             name: 'testVuex_yin',
             component: testVuex_yin
+        },
+        {
+            path: '/ts_init',
+            name: 'ts_init',
+            component: ts_init
         },
 
 
