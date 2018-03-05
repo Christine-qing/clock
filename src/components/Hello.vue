@@ -28,23 +28,7 @@
             </div>
             <div class="dsecond">{{inif.oSecond}}</div>
         </div>
-<!-- 翻页电子表 -->
-       <div class="now reversalClock">
-            <div class="dhour">{{inif.oHour}}</div>
-            <div class="colon">
-                <div class="colon1"></div>
-                <div class="colon1"></div>
-            </div>
-            <div class="dminute">{{inif.oMinute}}</div>
-            <div class="colon">
-                <div class="colon1"></div>
-                <div class="colon1"></div>
-            </div>
-            <div class="dsecond">{{inif.oSecond}}</div>
-            <div class="dsecond newSencond" >{{inif.oSecond}}</div>
-        </div>
-
-
+        <!-- 遮罩层 -->
         <div class="bottomCover" :style="{display:isDisplay}">
         </div>
         <!--问好框-->
@@ -166,7 +150,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        clear:both;
+        clear: both;
     }
     .clock {
         width: 300px;
@@ -226,10 +210,9 @@
         height: 100px;
         overflow: hidden;
         /* margin: 20px auto; */
-        margin:20px 50px 0 250px;
-        float:left;
+        margin: 20px 50px 0 500px;
+        float: left;
     }
-   
     .now .dhour,
     .now .dminute,
     .now .dsecond {
@@ -333,15 +316,15 @@
         text-align: center;
         line-height: 200px;
     }
-     .reversalClock{
+    .reversalClock {
         width: 600px;
         height: 100px;
         overflow: hidden;
         /* margin: 20px auto; */
-        margin:20px 0 0 50px
+        margin: 20px 0 0 50px
     }
-   .reversalClock .newSencond{
-         width: 100px;
+    .reversalClock .newSencond {
+        width: 100px;
         height: 100px;
         border-radius: 4px;
         background: deepskyblue;
