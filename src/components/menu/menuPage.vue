@@ -9,7 +9,6 @@
         <template slot="title"><Icon type="stats-bars"></Icon>GAME</template>
                 <MenuItem name="2-1"><router-link to="SokobanGame">推箱子</router-link></MenuItem>
                 <MenuItem name="2-2"> <router-link to="myGame">Mybox</router-link></MenuItem>
-                <MenuItem name="2-3">时段分析</MenuItem>   
       </Submenu>
 
       <Submenu name="3">
@@ -101,9 +100,13 @@
      
      
       </Submenu>
-       <Submenu name="12">   
+       <!-- <Submenu name="12">   
         <template slot="title"><Icon type="stats-bars"></Icon>ts</template>
                 <MenuItem name="12-1"><router-link to="ts_init">ts_init</router-link></MenuItem>        
+      </Submenu> -->
+      <Submenu name="13">   
+        <template slot="title"><Icon type="stats-bars"></Icon>Bmap</template>
+                <MenuItem name="12-1"><router-link to="bmap_init">bmap_init</router-link></MenuItem>        
       </Submenu>
       
     </Menu>

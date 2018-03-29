@@ -74,6 +74,7 @@ import inMap_HeatOverlay from '@/components/menu/inMap/inMap_HeatOverlay'
 
 import ts_init from '@/components/menu/typeScript/ts_init'
 
+import bmap_init from '@/components/menu/Bmap/bmap_init'
 
 
 Vue.use(Router)
@@ -376,8 +377,12 @@ export default new Router({
             path: '/ts_init',
             name: 'ts_init',
             component: ts_init
+        }, 
+        {
+            path: '/bmap_init',
+            name: 'bmap_init',
+            component: (resolve) => require(['@/components/menu/Bmap/bmap_init'], resolve),
         },
-
 
 
     ]

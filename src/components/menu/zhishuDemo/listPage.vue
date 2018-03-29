@@ -1,7 +1,7 @@
 <template>
     <div>
      <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
-        <div class="listPage clearfix" v-for="item in lists">
+        <div class="listPage clearfix" v-for="item in lists" :key="item.id">
             <!--左侧图片-->
             <div class="demoImg fl"></div>
             <!--右侧数据-->

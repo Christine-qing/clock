@@ -67,12 +67,12 @@
                     <p class="address">新天地商圈（中心点&5km）</p>
                     <div class="tableTitle">
                         <ul class="clearfix">
-                            <li v-for="item in dates" class="fl title">{{item}}</li>
+                            <li v-for="item in dates" class="fl title" :key="item.id">{{item}}</li>
                         </ul>
                     </div>
                     <ul class="clearfix person">
                         <li class="first fl">人口数</li>
-                        <li v-for="item in persons" class="fl ">{{item}}</li>
+                        <li v-for="item in persons" class="fl" :key="item.id">{{item}}</li>
                         <li class="last fl">20%</li>
                     </ul>
                     <div class="hr"></div>

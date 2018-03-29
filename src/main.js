@@ -15,6 +15,7 @@ Vue.use(Vuex);
 Vue.use(iView);
 Vue.use(inMap);
 
+Vue.prototype.$http=axios;
 Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
 
