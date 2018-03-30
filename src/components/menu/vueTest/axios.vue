@@ -11,13 +11,14 @@
     </div>
     <br/> <br/>
     <!--请求本地数据-->
-    <button @click="getData()">请求本地数据</button>
+    <Button @click="getData()">请求本地数据</Button>
+       <Button @click="newGetdata()">新封装方法请求本地数据</Button>
     <div>
       name:{{name}} age:{{age}} phone{{phone}}
     </div>
     <!--请求后端数据-->
-    <button @click="extranetData()">请求后台数据</button>
-    <button @click="createProject()">创建项目</button>
+    <Button @click="extranetData()">请求后台数据</Button>
+    <Button @click="createProject()">创建项目</Button>
     <div>{{extranet}}</div>
   </div>
 </template>
@@ -44,18 +45,24 @@
       },
       getData() {
         // 请求本地文件
-        axios({
-          method: "get",
-          baseurl: '',
-          url: "static/newdata.json",
-          data: {
-            // name:"李晓晴"
-          }
-        }).then((response) => {
+        var url="static/newdata.json"
+         this.$axios.get(url)
+        //  ({
+        //   method: "get",
+        //   baseurl: '',
+        //   url: "static/newdata.json",
+        //   data: {
+        //     // name:"李晓晴"
+        //   }
+        // })
+        .then((response) => {
           this.name = response.data[0].name;
           this.age = response.data[0].age;
           this.phone = response.data[0].phone;
         })
+      },
+      newGetdata(){
+
       },
       //  请求后端数据
       extranetData() {
