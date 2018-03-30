@@ -65,9 +65,8 @@
                 <!-- <MenuItem name="8-8"><router-link to="addLine">addLine</router-link></MenuItem>     -->
                 <!-- <MenuItem name="8-8"><router-link to="drawnPolygon">drawnPolygon</router-link></MenuItem>                                     -->
                 <MenuItem name="8-9"><router-link to="addEnclosure">add_lnglat</router-link></MenuItem> 
-                <MenuItem name="8-10"><router-link to="addImg">addImg</router-link></MenuItem> 
-                <MenuItem name="8-11"><router-link to="customized">customized</router-link></MenuItem> 
-                <MenuItem name="8-12"><router-link to="addMarker">addMarker</router-link></MenuItem> 
+                <MenuItem name="8-10"><router-link to="customized">customized</router-link></MenuItem> 
+                <MenuItem name="8-11"><router-link to="addMarker">addMarker</router-link></MenuItem> 
 
       </Submenu>
        <Submenu name="9">   

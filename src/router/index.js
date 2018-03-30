@@ -1,398 +1,373 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import menuPage from '@/components/menu/menuPage'
-
-import SokobanGame from '@/components/menu/gameDemo/SokobanGame'
-import myGame from '@/components/menu/gameDemo/myGame'
-
-import axios from '@/components/menu/vueTest/axios'
-import vuetest from '@/components/menu/vueTest/vuetest'
-import testVuex_mo from '@/components/menu/vueTest/testVuex_mo'
-import testVuex_yin from '@/components/menu/vueTest/testVuex_yin'
-
-
-
-import lide from '@/components/menu/ishowMap/lideTest'
-import busTrip from '@/components/menu/ishowMap/busTrip'
-import mapRadius from '@/components/menu/ishowMap/mapRadius'
-import mapFence from '@/components/menu/ishowMap/mapFence'
-import anchor from '@/components/menu/ishowMap/anchor'
-import point from '@/components/menu/ishowMap/point'
-import fenceCenter from '@/components/menu/ishowMap/fenceCenter'
-
-import listPage from '@/components/menu/zhishuDemo/listPage'
-import projectReport from '@/components/menu/zhishuDemo/projectReport'
-import newProject from '@/components/menu/zhishuDemo/newProject'
-import reportForm from '@/components/menu/zhishuDemo/reportForm'
-
-import echartsBar from '@/components/menu/echartsDemo/echartsBar'
-import echartsLine from '@/components/menu/echartsDemo/echartsLine'
-import echartsBarLine from '@/components/menu/echartsDemo/echartsBarLine'
-import echartsPie from '@/components/menu/echartsDemo/echartsPie'
-
-import upload from '@/components/menu/iviewTest/upload'
-import menu from '@/components/menu/iviewTest/menu'
-import table from '@/components/menu/iviewTest/table'
-
-import mapInit from '@/components/menu/Mapbox/mapInit'
-import mapStyle from '@/components/menu/Mapbox/mapStyle'
-import map3d from '@/components/menu/Mapbox/map3d'
-import animate from '@/components/menu/Mapbox/animate'
-import mapButton from '@/components/menu/Mapbox/mapButton'
-import getCoordinate from '@/components/menu/Mapbox/getCoordinate'
-import heat from '@/components/menu/Mapbox/heat'
-import addLine from '@/components/menu/Mapbox/addLine'
-import drawnPolygon from '@/components/menu/Mapbox/drawnPolygon'
-import addEnclosure from '@/components/menu/Mapbox/addEnclosure'
-import addPolygon from '@/components/menu/Mapbox/addPolygon'
-import addMarker from '@/components/menu/Mapbox/addMarker'
-import addImg from '@/components/menu/Mapbox/addImg'
-import customized from '@/components/menu/Mapbox/customized'
-
-import leafletInit from '@/components/menu/Leaflet/leafletInit'
-import leafletPoint from '@/components/menu/Leaflet/leafletPoint'
-import addIcon from '@/components/menu/Leaflet/addIcon'
-import geojson from '@/components/menu/Leaflet/geojson'
-import choropleth from '@/components/menu/Leaflet/choropleth'
-import leafletStyle from '@/components/menu/Leaflet/leafletStyle'
-import mapZoom from '@/components/menu/Leaflet/mapZoom'
-import leafletmap from '@/components/menu/Leaflet/leafletmap'
-import leafletCircle from '@/components/menu/Leaflet/leafletCircle'
-
-import createRegexp from '@/components/menu/regexp/createRegexp'
-
-import inMap_test from '@/components/menu/inMap/inMap_test'
-import inMap_DotOverlay from '@/components/menu/inMap/inMap_DotOverlay'
-import inMap_imgOverlay from '@/components/menu/inMap/inMap_imgOverlay'
-import inMap_BoundaryOverlay from '@/components/menu/inMap/inMap_BoundaryOverlay'
-import inMap_ColorBoundaryOverlay from '@/components/menu/inMap/inMap_ColorBoundaryOverlay'
-import inMap_CircuitOverlay from '@/components/menu/inMap/inMap_CircuitOverlay'
-import inMap_GriddingOverlay from '@/components/menu/inMap/inMap_GriddingOverlay'
-import inMap_HoneycombOverlay from '@/components/menu/inMap/inMap_HoneycombOverlay'
-import inMap_HeatOverlay from '@/components/menu/inMap/inMap_HeatOverlay'
-
-import ts_init from '@/components/menu/typeScript/ts_init'
-
-import bmap_init from '@/components/menu/Bmap/bmap_init'
-
 
 Vue.use(Router)
 
 
-
 export default new Router({
     routes: [{
-            path: '/',
-            name: 'Hello',
-            component: Hello,
+        path: '/',
+        name: 'Hello',
+        component: (resolve) => require(['@/components/Hello'], resolve),
 
-        },
-        {
-            path: '/menuPage',
-            name: 'menuPage',
-            component: menuPage,
 
-        },
+    },
+    {
+        path: '/menuPage',
+        name: 'menuPage',
+        component: (resolve) => require(['@/components/menu/menuPage'], resolve),
 
-        {
-            path: '/SokobanGame',
-            name: 'SokobanGame',
-            component: SokobanGame,
-        },
-        {
-            path: '/myGame',
-            name: 'myGame',
-            component: myGame
-        },
-        {
-            path: '/axios',
-            name: 'axios',
-            component: axios
-        },
-        {
-            path: '/lideTest',
-            name: 'lideTest',
-            component: lide
-        },
-        {
-            path: '/busTrip',
-            name: 'busTrip',
-            component: busTrip
-        },
-        {
-            path: '/mapRadius',
-            name: 'mapRadius',
-            component: mapRadius
-        },
-        {
-            path: '/mapFence',
-            name: 'mapFence',
-            component: mapFence
-        },
-        {
-            path: '/anchor',
-            name: 'anchor',
-            component: anchor
-        },
-        {
-            path: '/listPage',
-            name: 'listPage',
-            component: listPage
-        },
-        {
-            path: '/projectReport',
-            name: 'projectReport',
-            component: projectReport
-        },
-        {
-            path: '/newProject',
-            name: 'newProject',
-            component: newProject
-        },
-        {
-            path: '/echartsBar',
-            name: 'echartsBar',
-            component: echartsBar
-        },
-        {
-            path: '/echartsLine',
-            name: 'echartsLine',
-            component: echartsLine
-        },
-        {
-            path: '/echartsBarLine',
-            name: 'echartsBarLine',
-            component: echartsBarLine
-        },
-        {
-            path: '/echartsPie',
-            name: 'echartsPie',
-            component: echartsPie
-        },
-        {
-            path: '/upload',
-            name: 'upload',
-            component: upload
-        },
-        {
-            path: '/point',
-            name: 'point',
-            component: point
-        },
-        {
-            path: '/reportForm',
-            name: 'reportForm',
-            component: reportForm
-        },
-        {
-            path: '/fenceCenter',
-            name: 'fenceCenter',
-            component: fenceCenter
-        },
-        {
-            path: '/vuetest',
-            name: 'vuetest',
-            component: vuetest
-        },
-        {
-            path: '/menu',
-            name: 'menu',
-            component: menu
-        }, {
-            path: '/table',
-            name: 'table',
-            component: table
-        },
-        {
-            path: '/mapStyle',
-            name: 'mapStyle',
-            component: mapStyle
-        },
-        {
-            path: '/map3d',
-            name: 'map3d',
-            component: map3d
-        },
-        {
-            path: '/animate',
-            name: 'animate',
-            component: animate
-        },
-        {
-            path: '/mapButton',
-            name: 'mapButton',
-            component: mapButton
-        },
-        {
-            path: '/mapInit',
-            name: 'mapInit',
-            component: mapInit
-        },
-        {
-            path: '/getCoordinate',
-            name: 'getCoordinate',
-            component: getCoordinate
-        },
-        {
-            path: '/heat',
-            name: 'heat',
-            component: heat
-        },
-        {
-            path: '/addLine',
-            name: 'addLine',
-            component: addLine
-        },
-        {
-            path: '/leafletInit',
-            name: 'leafletInit',
-            component: leafletInit
-        },
-        {
-            path: '/leafletPoint',
-            name: 'leafletPoint',
-            component: leafletPoint
-        },
-        {
-            path: '/drawnPolygon',
-            name: 'drawnPolygon',
-            component: drawnPolygon
-        },
-        {
-            path: '/addIcon',
-            name: 'addIcon',
-            component: addIcon
-        },
-        {
-            path: '/choropleth',
-            name: 'choropleth',
-            component: choropleth
-        },
-        {
-            path: '/leafletStyle',
-            name: 'leafletStyle',
-            component: leafletStyle
-        },
-        {
-            path: '/mapZoom',
-            name: 'mapZoom',
-            component: mapZoom
-        },
-        {
-            path: '/addEnclosure',
-            name: 'addEnclosure',
-            component: addEnclosure
-        },
-        {
-            path: '/createRegexp',
-            name: 'createRegexp',
-            component: createRegexp
-        },
-        {
-            path: '/inMap_test',
-            name: 'inMap_test',
-            component: inMap_test
-        },
-        {
-            path: '/addPolygon',
-            name: 'addPolygon',
-            component: addPolygon
-        },
-        {
-            path: '/addMarker',
-            name: 'addMarker',
-            component: addMarker
-        },
-        {
-            path: '/addImg',
-            name: 'addImg',
-            component: addImg
-        },
-        {
-            path: '/customized',
-            name: 'customized',
-            component: customized
-        },
-        {
-            path: '/leafletmap',
-            name: 'leafletmap',
-            component: leafletmap
-        },
-        {
-            path: '/leafletCircle',
-            name: 'leafletCircle',
-            component: leafletCircle
-        },
-        {
-            path: '/inMap_DotOverlay',
-            name: 'inMap_DotOverlay',
-            component: inMap_DotOverlay
-        },
-        {
-            path: '/inMap_imgOverlay',
-            name: 'inMap_imgOverlay',
-            component: inMap_imgOverlay
-        },
-        {
-            path: '/inMap_BoundaryOverlay',
-            name: 'inMap_BoundaryOverlay',
-            component: inMap_BoundaryOverlay
-        },
-        {
-            path: '/inMap_ColorBoundaryOverlay',
-            name: 'inMap_ColorBoundaryOverlay',
-            component: inMap_ColorBoundaryOverlay
-        },{
-            path: '/inMap_CircuitOverlay',
-            name: 'inMap_CircuitOverlay',
-            component: inMap_CircuitOverlay
-        },
-        {
-            path: '/inMap_GriddingOverlay',
-            name: 'inMap_GriddingOverlay',
-            component: inMap_GriddingOverlay
-        },
-        {
-            path: '/inMap_HoneycombOverlay',
-            name: 'inMap_HoneycombOverlay',
-            component: inMap_HoneycombOverlay
-        },
-        {
-            path: '/inMap_HeatOverlay',
-            name: 'inMap_HeatOverlay',
-            component: inMap_HeatOverlay
-        },
-        {
-            path: '/testVuex_mo',
-            name: 'testVuex_mo',
-            component: testVuex_mo
-        },
-        {
-            path: '/testVuex_yin',
-            name: 'testVuex_yin',
-            component: testVuex_yin
-        },
-        {
-            path: '/ts_init',
-            name: 'ts_init',
-            component: ts_init
-        }, 
-        {
-            path: '/bmap_init',
-            name: 'bmap_init',
-            component: (resolve) => require(['@/components/menu/Bmap/bmap_init'], resolve),
-        },
-        {
-            path: '/bmap_Control',
-            name: 'bmap_Control',
-            component: (resolve) => require(['@/components/menu/Bmap/bmap_Control'], resolve),
-        },
-        {
-            path: '/bmap_overlay',
-            name: 'bmap_overlay',
-            component: (resolve) => require(['@/components/menu/Bmap/bmap_overlay'], resolve),
-        },
+    },
+
+    {
+        path: '/SokobanGame',
+        name: 'SokobanGame',
+        component: (resolve) => require(['@/components/menu/gameDemo/SokobanGame'], resolve),
+
+    },
+    {
+        path: '/myGame',
+        name: 'myGame',
+        component: (resolve) => require(['@/components/menu/gameDemo/myGame'], resolve),
+
+    },
+    {
+        path: '/axios',
+        name: 'axios',
+        component: (resolve) => require(['@/components/menu/vueTest/axios'], resolve),
+
+    },
+    {
+        path: '/lideTest',
+        name: 'lideTest',
+        component: (resolve) => require(['@/components/menu/ishowMap/lideTest'], resolve),
+
+    },
+    {
+        path: '/busTrip',
+        name: 'busTrip',
+        component: (resolve) => require(['@/components/menu/ishowMap/busTrip'], resolve),
+
+    },
+    {
+        path: '/mapRadius',
+        name: 'mapRadius',
+        component: (resolve) => require(['@/components/menu/ishowMap/mapRadius'], resolve),
+
+    },
+    {
+        path: '/mapFence',
+        name: 'mapFence',
+        component: (resolve) => require(['@/components/menu/ishowMap/mapFence'], resolve),
+
+    },
+    {
+        path: '/anchor',
+        name: 'anchor',
+        component: (resolve) => require(['@/components/menu/ishowMap/anchor'], resolve),
+
+    },
+    {
+        path: '/listPage',
+        name: 'listPage',
+        component: (resolve) => require(['@/components/menu/zhishuDemo/listPage'], resolve),
+
+    },
+    {
+        path: '/projectReport',
+        name: 'projectReport',
+        component: (resolve) => require(['@/components/menu/zhishuDemo/projectReport'], resolve),
+
+    },
+    {
+        path: '/newProject',
+        name: 'newProject',
+        component: (resolve) => require(['@/components/menu/zhishuDemo/newProject'], resolve),
+
+    },
+    {
+        path: '/echartsBar',
+        name: 'echartsBar',
+        component: (resolve) => require(['@/components/menu/echartsDemo/echartsBar'], resolve),
+
+    },
+    {
+        path: '/echartsLine',
+        name: 'echartsLine',
+        component: (resolve) => require(['@/components/menu/echartsDemo/echartsLine'], resolve),
+
+    },
+    {
+        path: '/echartsBarLine',
+        name: 'echartsBarLine',
+        component: (resolve) => require(['@/components/menu/echartsDemo/echartsBarLine'], resolve),
+
+    },
+    {
+        path: '/echartsPie',
+        name: 'echartsPie',
+        component: (resolve) => require(['@/components/menu/echartsDemo/echartsPie'], resolve),
+
+    },
+    {
+        path: '/upload',
+        name: 'upload',
+        component: (resolve) => require(['@/components/menu/iviewTest/upload'], resolve),
+
+    },
+    {
+        path: '/point',
+        name: 'point',
+        component: (resolve) => require(['@/components/menu/ishowMap/point'], resolve),
+
+    },
+    {
+        path: '/reportForm',
+        name: 'reportForm',
+        component: (resolve) => require(['@/components/menu/zhishuDemo/reportForm'], resolve),
+
+    },
+    {
+        path: '/fenceCenter',
+        name: 'fenceCenter',
+        component: (resolve) => require(['@/components/menu/ishowMap/fenceCenter'], resolve),
+
+    },
+    {
+        path: '/vuetest',
+        name: 'vuetest',
+        component: (resolve) => require(['@/components/menu/vueTest/vuetest'], resolve),
+
+    },
+    {
+        path: '/menu',
+        name: 'menu',
+        component: (resolve) => require(['@/components/menu/iviewTest/menu'], resolve),
+
+    }, {
+        path: '/table',
+        name: 'table',
+        component: (resolve) => require(['@/components/menu/iviewTest/table'], resolve),
+
+    },
+    {
+        path: '/mapStyle',
+        name: 'mapStyle',
+        component: (resolve) => require(['@/components/menu/Mapbox/mapStyle'], resolve),
+
+    },
+    {
+        path: '/map3d',
+        name: 'map3d',
+        component: (resolve) => require(['@/components/menu/Mapbox/map3d'], resolve),
+
+    },
+    {
+        path: '/animate',
+        name: 'animate',
+        component: (resolve) => require(['@/components/menu/Mapbox/animate'], resolve),
+
+    },
+    {
+        path: '/mapButton',
+        name: 'mapButton',
+        component: (resolve) => require(['@/components/menu/Mapbox/mapButton'], resolve),
+
+    },
+    {
+        path: '/mapInit',
+        name: 'mapInit',
+        component: (resolve) => require(['@/components/menu/Mapbox/mapInit'], resolve),
+
+    },
+    {
+        path: '/getCoordinate',
+        name: 'getCoordinate',
+        component: (resolve) => require(['@/components/menu/Mapbox/getCoordinate'], resolve),
+
+    },
+    {
+        path: '/heat',
+        name: 'heat',
+        component: (resolve) => require(['@/components/menu/Mapbox/heat'], resolve),
+
+    },
+    {
+        path: '/addLine',
+        name: 'addLine',
+        component: (resolve) => require(['@/components/menu/Mapbox/addLine'], resolve),
+
+    },
+    {
+        path: '/leafletInit',
+        name: 'leafletInit',
+        component: (resolve) => require(['@/components/menu/Leaflet/leafletInit'], resolve),
+
+    },
+    {
+        path: '/leafletPoint',
+        name: 'leafletPoint',
+        component: (resolve) => require(['@/components/menu/Leaflet/leafletPoint'], resolve),
+
+    },
+    {
+        path: '/drawnPolygon',
+        name: 'drawnPolygon',
+        component: (resolve) => require(['@/components/menu/Mapbox/drawnPolygon'], resolve),
+
+    },
+    {
+        path: '/addIcon',
+        name: 'addIcon',
+        component: (resolve) => require(['@/components/menu/Leaflet/addIcon'], resolve),
+
+    },
+    {
+        path: '/choropleth',
+        name: 'choropleth',
+        component: (resolve) => require(['@/components/menu/Leaflet/choropleth'], resolve),
+
+    },
+    {
+        path: '/leafletStyle',
+        name: 'leafletStyle',
+        component: (resolve) => require(['@/components/menu/Leaflet/leafletStyle'], resolve),
+
+    },
+    {
+        path: '/mapZoom',
+        name: 'mapZoom',
+        component: (resolve) => require(['@/components/menu/Leaflet/mapZoom'], resolve),
+
+    },
+    {
+        path: '/addEnclosure',
+        name: 'addEnclosure',
+        component: (resolve) => require(['@/components/menu/Mapbox/addEnclosure'], resolve),
+
+    },
+    {
+        path: '/createRegexp',
+        name: 'createRegexp',
+        component: (resolve) => require(['@/components/menu/regexp/createRegexp'], resolve),
+
+    },
+    {
+        path: '/inMap_test',
+        name: 'inMap_test',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_test'], resolve),
+
+    },
+    {
+        path: '/addPolygon',
+        name: 'addPolygon',
+        component: (resolve) => require(['@/components/menu/Mapbox/addPolygon'], resolve),
+
+    },
+    {
+        path: '/addMarker',
+        name: 'addMarker',
+        component: (resolve) => require(['@/components/menu/Mapbox/addMarker'], resolve),
+
+    },
+    {
+        path: '/customized',
+        name: 'customized',
+        component: (resolve) => require(['@/components/menu/Mapbox/customized'], resolve),
+
+    },
+    {
+        path: '/leafletmap',
+        name: 'leafletmap',
+        component: (resolve) => require(['@/components/menu/Leaflet/leafletmap'], resolve),
+
+    },
+    {
+        path: '/leafletCircle',
+        name: 'leafletCircle',
+        component: (resolve) => require(['@/components/menu/Leaflet/leafletCircle'], resolve),
+
+    },
+    {
+        path: '/inMap_DotOverlay',
+        name: 'inMap_DotOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_DotOverlay'], resolve),
+
+    },
+    {
+        path: '/inMap_imgOverlay',
+        name: 'inMap_imgOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_imgOverlay'], resolve),
+
+    },
+    {
+        path: '/inMap_BoundaryOverlay',
+        name: 'inMap_BoundaryOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_BoundaryOverlay'], resolve),
+
+    },
+    {
+        path: '/inMap_ColorBoundaryOverlay',
+        name: 'inMap_ColorBoundaryOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_ColorBoundaryOverlay'], resolve),
+
+    }, {
+        path: '/inMap_CircuitOverlay',
+        name: 'inMap_CircuitOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_CircuitOverlay'], resolve),
+
+    },
+    {
+        path: '/inMap_GriddingOverlay',
+        name: 'inMap_GriddingOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_GriddingOverlay'], resolve),
+
+    },
+    {
+        path: '/inMap_HoneycombOverlay',
+        name: 'inMap_HoneycombOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_HoneycombOverlay'], resolve),
+
+    },
+    {
+        path: '/inMap_HeatOverlay',
+        name: 'inMap_HeatOverlay',
+        component: (resolve) => require(['@/components/menu/inMap/inMap_HeatOverlay'], resolve),
+
+    },
+    {
+        path: '/testVuex_mo',
+        name: 'testVuex_mo',
+        component: (resolve) => require(['@/components/menu/vueTest/testVuex_mo'], resolve),
+
+    },
+    {
+        path: '/testVuex_yin',
+        name: 'testVuex_yin',
+        component: (resolve) => require(['@/components/menu/vueTest/testVuex_yin'], resolve),
+
+    },
+    {
+        path: '/ts_init',
+        name: 'ts_init',
+        component: (resolve) => require(['@/components/menu/typeScript/ts_init'], resolve),
+
+    },
+    {
+        path: '/bmap_init',
+        name: 'bmap_init',
+        component: (resolve) => require(['@/components/menu/Bmap/bmap_init'], resolve),
+    },
+    {
+        path: '/bmap_Control',
+        name: 'bmap_Control',
+        component: (resolve) => require(['@/components/menu/Bmap/bmap_Control'], resolve),
+    },
+    {
+        path: '/bmap_overlay',
+        name: 'bmap_overlay',
+        component: (resolve) => require(['@/components/menu/Bmap/bmap_overlay'], resolve),
+    },
 
 
     ]
