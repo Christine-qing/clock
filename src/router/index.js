@@ -383,6 +383,16 @@ export default new Router({
             name: 'bmap_init',
             component: (resolve) => require(['@/components/menu/Bmap/bmap_init'], resolve),
         },
+        {
+            path: '/bmap_Control',
+            name: 'bmap_Control',
+            component: (resolve) => require(['@/components/menu/Bmap/bmap_Control'], resolve),
+        },
+        {
+            path: '/bmap_overlay',
+            name: 'bmap_overlay',
+            component: (resolve) => require(['@/components/menu/Bmap/bmap_overlay'], resolve),
+        },
 
 
     ]

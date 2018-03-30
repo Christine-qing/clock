@@ -106,7 +106,9 @@
       </Submenu> -->
       <Submenu name="13">   
         <template slot="title"><Icon type="stats-bars"></Icon>Bmap</template>
-                <MenuItem name="12-1"><router-link to="bmap_init">bmap_init</router-link></MenuItem>        
+                <MenuItem name="13-1"><router-link to="bmap_init">bmap_init</router-link></MenuItem>    
+                <MenuItem name="13-2"><router-link to="bmap_Control">bmap_Control</router-link></MenuItem>      
+                 <MenuItem name="13-3"><router-link to="bmap_overlay">bmap_overlay</router-link></MenuItem>                  
       </Submenu>
       
     </Menu>
