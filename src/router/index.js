@@ -368,6 +368,11 @@ export default new Router({
         name: 'bmap_overlay',
         component: (resolve) => require(['@/components/menu/Bmap/bmap_overlay'], resolve),
     },
+    {
+        path: '/nextTick',
+        name: 'nextTick',
+        component: (resolve) => require(['@/components/menu/vueTest/nextTick'], resolve),
+    },
 
 
     ]
