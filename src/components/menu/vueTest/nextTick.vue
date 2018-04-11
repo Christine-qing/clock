@@ -6,13 +6,24 @@
             {{message}}
         </div>
         <Button @click="foo()">
-                 {{msg}}
-                 <input type="text"  focus>
-           </Button>
+                       {{msg}}
+                       <input type="text" v-focus>
+                    </Button>
+        <p id="page">{{content|reverseStr}}</p>
+        <!-- <child message="hello!">第一种赋值方式</child> -->
+        <!-- <child :message="hello2">第二种赋值方式</child> -->
+        <child v-for="item in test" :key="item" :message="item">第三种方式循环展开</child>
     </div>
 </template>
 
 <script>
+    import {
+        focus
+    } from "../../directives/index"
+    import {
+        reverseStr
+    } from "../../filter/index";
+    import child from './child'
     export default {
         name: "",
         data() {
@@ -20,10 +31,22 @@
                 message: "没有更新",
                 msg: {
                     age: 18
-                }
+                },
+                content: "我是中国人",
+                test: [
+                    1, 2, 3, 5
+                ],
             }
         },
-        components: {},
+        directives: {
+            focus
+        },
+        filters: {
+            reverseStr
+        },
+        components: {
+            child
+        },
         mounted() {
             this.updateMessage();
             this.foo();
@@ -40,15 +63,9 @@
                 this.$set(this.msg, "name", "zhangsan")
                 console.log(this.msg)
                 this.$delete(this.msg, "age")
-                this.$directive('focus', {
-                    // 当被绑定的元素插入到 DOM 中时……
-                    inserted: function(el) {
-                        // 聚焦元素
-                        el.focus()
-                    }
-                })
-            }
-        }
+                console.log(reverseStr, "222233")
+            },
+        },
     }
 </script>
 
