@@ -7,6 +7,7 @@ import router from './router';
 import axios from 'axios';
 import store from './store/index'
 
+
 import iView from 'iview';
 import inMap from 'inmap'
 import echarts from 'echarts/dist/echarts.min.js';

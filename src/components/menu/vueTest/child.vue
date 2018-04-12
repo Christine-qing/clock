@@ -1,6 +1,7 @@
 <template>
     <div>
         子组件页面收到的父组件的值： {{this.message}}
+        wouldzujian{{data}}
     </div>
 </template>
 
@@ -20,8 +21,12 @@
         mounted() {
             console.log(this.message, "props")
         },
-        methods: {
-        }
+        methods: {},
+        computed: {
+            data() {
+                return this.$store.state.data;
+            }
+        },
     }
 </script>
 

@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import * as types from "../../../store/mutation-types";
-import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+// import * as types from "../../../store/mutation-types";
+// import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 export default {
   components: {},
   data() {

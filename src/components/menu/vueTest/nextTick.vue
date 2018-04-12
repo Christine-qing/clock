@@ -6,13 +6,14 @@
             {{message}}
         </div>
         <Button @click="foo()">
-                       {{msg}}
-                       <input type="text" v-focus>
-                    </Button>
+                           {{msg}}
+                           <input type="text" v-focus>
+                        </Button>
         <p id="page">{{content|reverseStr}}</p>
         <!-- <child message="hello!">第一种赋值方式</child> -->
         <!-- <child :message="hello2">第二种赋值方式</child> -->
         <child v-for="item in test" :key="item" :message="item">第三种方式循环展开</child>
+        <button @click="init()">vuex数据传输：11{{this.$store.state.data}}</button>
     </div>
 </template>
 
@@ -64,7 +65,11 @@
                 console.log(this.msg)
                 this.$delete(this.msg, "age")
                 console.log(reverseStr, "222233")
+                console.log(this.$store.state,"4568")
             },
+            init() {
+                this.$store.dispatch('setData', 8)
+            }
         },
     }
 </script>
