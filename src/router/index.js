@@ -369,9 +369,9 @@ export default new Router({
         component: (resolve) => require(['@/components/menu/Bmap/bmap_overlay'], resolve),
     },
     {
-        path: '/nextTick',
-        name: 'nextTick',
-        component: (resolve) => require(['@/components/menu/vueTest/nextTick'], resolve),
+        path: '/methods',
+        name: 'methods',
+        component: (resolve) => require(['@/components/menu/vueTest/methods'], resolve),
     },
 
 

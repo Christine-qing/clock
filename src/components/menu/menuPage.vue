@@ -18,7 +18,7 @@
                 <MenuItem name="3-2"><router-link to="vuetest" tag="p">vue组件</router-link></MenuItem>
                 <MenuItem name="3-3"><router-link to="testVuex_mo" >vuex测试</router-link></MenuItem>
                 <MenuItem name="3-4"><router-link to="testVuex_yin" >vuex2</router-link></MenuItem>
-                <MenuItem name="3-5"><router-link to="nextTick" >nextTick</router-link></MenuItem>
+                <MenuItem name="3-5"><router-link to="methods" >methods</router-link></MenuItem>
              
           <!-- </MenuGroup>-->
         </Submenu>
