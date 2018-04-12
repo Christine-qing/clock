@@ -2,16 +2,15 @@
   <div>
   </div>
 </template>
+
 <script>
   export default {
     name: "",
     data() {
-      return {
-      }
+      return {}
     },
-     components:{},
-    mounted() {
-    },
+    components: {},
+    mounted() {},
     methods: {}
   }
 </script>

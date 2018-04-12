@@ -19,7 +19,10 @@ import bus from "../../../bus"
             }
         },
         props: {
-            message: ""
+          message:{
+                type: Number,
+                defalut:""
+           }
         },
         components: {},
         mounted() {
