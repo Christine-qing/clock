@@ -110,6 +110,11 @@
                 <MenuItem name="13-2"><router-link to="bmap_Control">bmap_Control</router-link></MenuItem>      
                  <MenuItem name="13-3"><router-link to="bmap_overlay">bmap_overlay</router-link></MenuItem>                  
       </Submenu>
+       <Submenu name="14">   
+        <template slot="title"><Icon type="stats-bars"></Icon>storeDemo</template>
+                <MenuItem name="14-1"><router-link to="StoreIndex">StoreIndex</router-link></MenuItem>    
+              
+      </Submenu>
       
     </Menu>
  

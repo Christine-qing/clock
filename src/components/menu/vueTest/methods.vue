@@ -83,7 +83,7 @@
             },
             foo() {
                 this.$set(this.msg, "name", "zhangsan")
-                console.log(this.msg)
+                // console.log(this.msg)
                 this.$delete(this.msg, "age")
                 console.log(reverseStr, "222233")
                 console.log(this.$store.state, "4568")
@@ -111,17 +111,16 @@
     }
     ;
     .button {
-        width:100px;
-        height:40px;
-        color:black;
+        width: 100px;
+        height: 40px;
+        color: black;
         border: none;
         border-radius: 2px;
-        box-shadow:2px 2px 1px #ccc
+        box-shadow: 2px 2px 1px #ccc
     }
-    .button:hover{
-      border:1px solid black
+    .button:hover {
+        border: 1px solid black
     }
-
     .buttonClose {
         background-color: red;
     }

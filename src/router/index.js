@@ -373,6 +373,11 @@ export default new Router({
         name: 'methods',
         component: (resolve) => require(['@/components/menu/vueTest/methods'], resolve),
     },
+    {
+        path: '/StoreIndex',
+        name: 'StoreIndex',
+        component: (resolve) => require(['@/components/menu/storeDemo/StoreIndex'], resolve),
+    },
 
 
     ]
