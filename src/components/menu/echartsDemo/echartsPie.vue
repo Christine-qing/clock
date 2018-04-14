@@ -31,9 +31,6 @@
                         containLabel: true
                     },
                     color: ["#2D8CF0", "#6DCE67 "],
-                    //   title: {
-                    //     text: '男女比例'
-                    // },
                     title: {
                         text: '南丁格尔玫瑰图',
                         subtext: '纯属虚构',

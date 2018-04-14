@@ -1,6 +1,6 @@
 <template>
     <div class="project">
-     <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+        <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
         <!--项目概览-->
         <div class="projectOverview">
             <div class="content clearfix">
@@ -142,6 +142,7 @@
         </div>
     </div>
 </template>
+
 <script>
     import echarts from 'echarts'
     export default {
@@ -160,6 +161,35 @@
                     98000, 98000, 98000, 98000, 98000, 98000, 98000, 98000,
                 ],
                 map: null,
+                piegrid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                piecolor: ["#2D8CF0", "#6DCE67 "],
+                pietextStyle: {
+                    color: "#4D5363",
+                    fontWeight: '100',
+                    fontSize: 16,
+                    fontFamily: "PingFangSC-Medium"
+                },
+                pietooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                pielegend: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '16',
+                        }
+                    }
+                }
             }
         },
         mounted() {
@@ -378,28 +408,14 @@
                 let genderPieChart = this.$echarts.init(document.getElementById('genderPieChart'))
                 // 绘制图表
                 genderPieChart.setOption({
-                    grid: {
-                        top: '10%',
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-                    color: ["#2D8CF0", "#6DCE67 "],
+                    grid: this.piegrid,
+                    color: this.piecolor,
                     title: {
                         text: '男女比例',
-                        textStyle: {
-                            color: "#4D5363",
-                            fontWeight: '100',
-                            fontSize: 16,
-                            fontFamily: "PingFangSC-Medium"
-                        },
+                        textStyle: this.pietextStyle,
                         padding: [20, 0, 0, 0]
                     },
-                    tooltip: {
-                        trigger: 'item',
-                        formatter: "{a} <br/>{b}: {c} ({d}%)"
-                    },
+                    tooltip: this.pietooltip,
                     legend: {
                         orient: 'vertical',
                         x: 'center',
@@ -414,27 +430,14 @@
                 let carPieChart = this.$echarts.init(document.getElementById('carPieChart'))
                 // 绘制图表
                 carPieChart.setOption({
-                    grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-                    color: ["#2D8CF0", "#6DCE67 "],
+                    grid: this.piegrid,
+                    color: this.piecolor,
                     title: {
                         text: '购车比例',
-                        textStyle: {
-                            color: "#4D5363",
-                            fontWeight: '100',
-                            fontSize: 16,
-                            fontFamily: "PingFangSC-Medium"
-                        },
+                        textStyle: this.pietextStyle,
                         padding: [20, 0, 0, 0]
                     },
-                    tooltip: {
-                        trigger: 'item',
-                        formatter: "{a} <br/>{b}: {c} ({d}%)"
-                    },
+                    tooltip: this.pietooltip,
                     legend: {
                         orient: 'vertical',
                         x: 'center',
@@ -449,27 +452,14 @@
                 let marriedPieChart = this.$echarts.init(document.getElementById('marriedPieChart'))
                 // 绘制图表
                 marriedPieChart.setOption({
-                    grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-                    color: ["#2D8CF0", "#6DCE67 "],
+                    grid: this.piegrid,
+                    color: this.piecolor,
                     title: {
                         text: '已婚比例',
-                        textStyle: {
-                            color: "#4D5363",
-                            fontWeight: '100',
-                            fontSize: 16,
-                            fontFamily: "PingFangSC-Medium"
-                        },
+                        textStyle: this.pietextStyle,
                         padding: [20, 0, 0, 0]
                     },
-                    tooltip: {
-                        trigger: 'item',
-                        formatter: "{a} <br/>{b}: {c} ({d}%)"
-                    },
+                    tooltip: this.pietooltip,
                     legend: {
                         orient: 'vertical',
                         x: 'center',
@@ -516,18 +506,7 @@
                         type: 'pie',
                         radius: ['50%', '70%'],
                         // avoidLabelOverlap: false,
-                        label: {
-                            normal: {
-                                show: false,
-                                position: 'center'
-                            },
-                            emphasis: {
-                                show: true,
-                                textStyle: {
-                                    fontSize: '16',
-                                }
-                            }
-                        },
+                        label: this.pielegend,
                         data: [{
                                 value: 335,
                                 name: '男性'
@@ -545,18 +524,7 @@
                         type: 'pie',
                         radius: ['50%', '70%'],
                         // avoidLabelOverlap: false,
-                        label: {
-                            normal: {
-                                show: false,
-                                position: 'center'
-                            },
-                            emphasis: {
-                                show: true,
-                                textStyle: {
-                                    fontSize: '16',
-                                }
-                            }
-                        },
+                        label: this.pielegend,
                         data: [{
                                 value: 335,
                                 name: '有车'
@@ -574,18 +542,7 @@
                         type: 'pie',
                         radius: ['50%', '70%'],
                         // avoidLabelOverlap: false,
-                        label: {
-                            normal: {
-                                show: false,
-                                position: 'center'
-                            },
-                            emphasis: {
-                                show: true,
-                                textStyle: {
-                                    fontSize: '16',
-                                }
-                            }
-                        },
+                        label: this.pielegend,
                         data: [{
                                 value: 335,
                                 name: '已婚'

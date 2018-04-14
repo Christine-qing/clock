@@ -1,7 +1,7 @@
 <template>
     <div>
     <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
-        <div id="barChart" :style="{width: '1000px', height: '300px'}"></div>
+        <div id="barChart" :style="{width: '100%', height: '100%'}"></div>
     </div>
 </template>
 <script>
@@ -53,7 +53,7 @@
                             type: 'value',
                             name: '人口数',
                             min: 0,
-                            max: 250,
+                            max: 200,
                             interval: 50,
                             axisLabel: {
                                 formatter: '{value} 人'

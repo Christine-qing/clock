@@ -27,8 +27,7 @@ export default {
   mounted() {},
   methods: {
     ...mapActions({
-      add: "addNumber", // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`
-      
+      add: "addNumber", // 将 `this.addNumber()` 映射为 `this.$store.commit('addNumber')`  
    })
   },
   computed: {

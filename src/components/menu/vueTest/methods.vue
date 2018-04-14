@@ -21,6 +21,7 @@
         <span :style="classObject">class绑定</span>
         <input type="text" v-model="value">{{value}}
         <button :class="[$style.button, $style.buttonClose]" v-if="message">此处不能为空</button>
+        <echartsLine style="width:200px;height:200px" :msg="this.setData"></echartsLine>
     </div>
 </template>
 
@@ -32,10 +33,13 @@
         reverseStr
     } from "../../filter/index"
     import child from './child'
+    import chart from '../../../chart/chart'
     import bus from '../../../bus.js'
+      import echartsLine from "../echartsDemo/echartsLine.vue"
     export default {
         name: "",
         data() {
+           
             return {
                 message: "没有更新",
                 msg: {
@@ -52,7 +56,8 @@
                 classObject: {
                     fontSize: "20px",
                     color: "blue"
-                }
+                },
+                  setData:[100,20,50,60,10,20,56,60,80,30]
             }
         },
         directives: {
@@ -62,7 +67,9 @@
             reverseStr
         },
         components: {
-            child
+            child,
+            chart,
+             echartsLine
         },
         mounted() {
             this.updateMessage();

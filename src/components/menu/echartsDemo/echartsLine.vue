@@ -1,7 +1,7 @@
 <template>
     <div>
         <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
-        <div id="lineChart" :style="{width: '1000px', height: '300px'}"></div>
+        <div id="lineChart" :style="{width: '100%', height: '100%'}"></div>
     </div>
 </template>
 <script>
@@ -13,6 +13,9 @@
                 lineChart: null,
             }
         },
+          props: {
+        msg: ""
+    },
         mounted() {
             this.initLinechart()
             this.chart()
@@ -53,11 +56,13 @@
                 this.lineChart = lineChart;
             },
             chart() {
+                debugger
+                console.log(this.msg)
                 this.lineChart.setOption({
                     series: [{
                         name: '最低气温',
                         type: 'line',
-                        data: [1, 4, 2, 5, 3, 2, 0],
+                        data:this.msg
                     }]
                 })
             }
