@@ -56,7 +56,6 @@
                 this.lineChart = lineChart;
             },
             chart() {
-                debugger
                 console.log(this.msg)
                 this.lineChart.setOption({
                     series: [{

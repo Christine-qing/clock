@@ -7,9 +7,15 @@ Vue.use(Router)
 export default new Router({
     routes: [{
         path: '/',
-        name: 'Hello',
-        component: (resolve) => require(['@/components/Hello'], resolve),
+        name: 'login',
+        component: (resolve) => require(['@/components/login'], resolve),
 
+
+    },
+    {
+        path: '/hello',
+        name: 'hello',
+        component: (resolve) => require(['@/components/Hello'], resolve),
 
     },
     {
