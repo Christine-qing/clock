@@ -111,7 +111,7 @@
                  <MenuItem name="13-3"><router-link to="bmap_overlay">bmap_overlay</router-link></MenuItem>                  
       </Submenu>
        <Submenu name="14">   
-        <template slot="title"><Icon type="stats-bars"></Icon>storeDemo</template>
+        <template slot="title"><Icon type="stats-bars"></Icon>storeProject</template>
                 <MenuItem name="14-1"><router-link to="StoreIndex">StoreIndex</router-link></MenuItem>    
               
       </Submenu>
@@ -126,10 +126,7 @@
         <Radio label="primary"></Radio>
     </RadioGroup>
 </div>
- <!-- 我是菜单页面
-  <Button type="success" long> <router-link to="SokobanGame">游戏</router-link></Button>
 
--->
 
    <router-view></router-view>
 

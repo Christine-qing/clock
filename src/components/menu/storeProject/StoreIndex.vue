@@ -1,6 +1,6 @@
 <template>
     <div class="storeIndex ">
-        <ul class="store-header clearfix">
+        <!-- <ul class="store-header clearfix">
             <li class="user-icon fl"></li>
             <li class="user-name fl">店缘</li>
             <li class="update-user fl">
@@ -9,19 +9,17 @@
             <li class="add-user fl">
                 <Button type="primary">新增授权</Button>
             </li>
-        </ul>
-        <ul>
-            <!-- <li class="title foo"></li> -->
+        </ul> -->
+        <!-- <ul>
+        
             <Button type="primary" size="large">Large</Button>
             <Button type="primary">Default</Button>
-        </ul>
-        <!-- <echartsBar style="width:500px;height:200px"></echartsBar> -->
+        </ul> -->
         <echartsLine style="width:500px;height:200px" :msg="this.setData"></echartsLine>
     </div>
 </template>
 
 <script>
-    import echartsBar from "../echartsDemo/echartsBar.vue"
     import echartsLine from "../echartsDemo/echartsLine.vue"
     export default {
         name: "",
@@ -33,7 +31,6 @@
             }
         },
         components: {
-            echartsBar,
             echartsLine
         },
         mounted() {
@@ -96,34 +93,7 @@
     .storeIndex {
         width: 1080px;
         border: 1px solid red;
-        .store-header {
-            width: 100%;
-            height: 80px;
-            font-size: 16px;
-            margin: 0px auto;
-            list-style: none;
-            border: 1px solid blue;
-            .user-icon {
-                width: 60px;
-                height: 60px;
-                border-radius: 50% 50%;
-                border: 1px solid black;
-                margin: 10px 0 0 10px;
-            }
-            .user-name {
-                @extend.w-100;
-                text-align: center;
-                line-height: 100%;
-            }
-            .update-user {
-                @extend.w-100;
-                margin: 20px auto;
-            }
-            .add-user {
-                @extend.w-100;
-                margin: 20px auto;
-            }
-        }
+  
     }
     .title {
         width: 100px;

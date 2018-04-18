@@ -13,6 +13,12 @@ export default new Router({
 
     },
     {
+        path: '/user',
+        name: 'user',
+        component: (resolve) => require(['@/components/menu/user'], resolve),
+
+    },
+    {
         path: '/hello',
         name: 'hello',
         component: (resolve) => require(['@/components/Hello'], resolve),
@@ -382,7 +388,7 @@ export default new Router({
     {
         path: '/StoreIndex',
         name: 'StoreIndex',
-        component: (resolve) => require(['@/components/menu/storeDemo/StoreIndex'], resolve),
+        component: (resolve) => require(['@/components/menu/storeProject/StoreIndex'], resolve),
     },
 
 
