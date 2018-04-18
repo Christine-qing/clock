@@ -390,6 +390,11 @@ export default new Router({
         name: 'StoreIndex',
         component: (resolve) => require(['@/components/menu/storeProject/StoreIndex'], resolve),
     },
+    {
+        path: '/iviewTable',
+        name: 'iviewTable',
+        component: (resolve) => require(['@/components/menu/vueTest/iviewTable'], resolve),
+    },
 
 
     ]
