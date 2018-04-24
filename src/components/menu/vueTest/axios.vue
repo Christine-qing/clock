@@ -3,16 +3,16 @@
     <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
     <div id="demo">
       <button v-on:click="show=!show" @click="aa()">
-                Toggle
-            </button>
+                  Toggle
+              </button>
       <transition name="fade">
         <p v-if="show">hello</p>
       </transition>
     </div>
     <br/> <br/>
     <!--请求本地数据-->
-    <Button @click="getData()">请求本地数据</Button>
-       <Button @click="newGetdata()">新封装方法请求本地数据</Button>
+    <Button @click="getData(href)">请求本地数据</Button>
+    <Button @click="newGetdata()">新封装方法请求本地数据</Button>
     <div>
       name:{{name}} age:{{age}} phone{{phone}}
     </div>
@@ -22,6 +22,7 @@
     <div>{{extranet}}</div>
   </div>
 </template>
+
 <script>
   import axios from 'axios'
   export default {
@@ -35,7 +36,8 @@
         name: "",
         age: "",
         phone: "",
-        extranet: ""
+        extranet: "",
+        href:'www.baidu.com'
       }
     },
     mounted() {},
@@ -43,26 +45,32 @@
       aa() {
         this.isDisplay = "none"
       },
-      getData() {
+      getData(e) {
         // 请求本地文件
-        var url="static/newdata.json"
-         this.$axios.get(url)
-        //  ({
-        //   method: "get",
-        //   baseurl: '',
-        //   url: "static/newdata.json",
-        //   data: {
-        //     // name:"李晓晴"
-        //   }
-        // })
-        .then((response) => {
-          this.name = response.data[0].name;
-          this.age = response.data[0].age;
-          this.phone = response.data[0].phone;
-        })
+        var url = "static/newdata.json"
+        var perms = {
+          name: '',
+        };
+        debugger
+        this.$axios.post(url, perms)
+          // this.$axios({
+          //   method: "get",
+          //   baseurl: '',
+          //   url: "static/newdata.json",
+          //   data: {
+          //     "name":""
+          //   }
+          // })
+          .then((response) => {
+            //  window.location = e
+            window.location.href = "http://www.baidu.com";
+            debugger
+            this.name = response.data.name;
+            this.age = response.data.age;
+            this.phone = response.data.phone;
+          })
       },
-      newGetdata(){
-
+      newGetdata() {
       },
       //  请求后端数据
       extranetData() {

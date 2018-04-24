@@ -1,14 +1,11 @@
 export const focus = (el) => {
     el.focus()
 }
+export const changeRed = (el, binding) => {
+    debugger
+    el.style.backgroundColor="red"
 
-// export default {
-//     bind(el, binding, vnode) {
-//         debugger
-//         function focus(el) {
-//             // el.focus()
-//             alert("11")
-//         }
-//     }
+    el.style.fontSize = binding.value + 'px';
+}
 
-// }
+//在这里定义并导出我的自定义指令，指令里包含我想实现的操作。

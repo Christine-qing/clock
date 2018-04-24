@@ -78,9 +78,9 @@ axios.interceptors.response.use(
   // axios.defaults.baseURL = '/api'
   axios.defaults.baseURL = 'http://localhost:3001/'
 //设置默认请求头
-// axios.defaults.headers = {
-//     'X-Requested-With': 'XMLHttpRequest'
-// }
+axios.defaults.headers = {
+    'X-Requested-With': 'XMLHttpRequest'
+}
 
 axios.defaults.timeout = 10000
 

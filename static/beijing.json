@@ -1,13 +1,13 @@
 {
-    type: "FeatureCollection",
-    features: [{
-            type: "Feature",
-            properties: {
-                color: red
+    "type": "FeatureCollection",
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "color": "red"
             },
-            geometry: {
-                type: "Polygon",
-                coordinates: [
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
                     [
                         [
                             476.2181854248047,
