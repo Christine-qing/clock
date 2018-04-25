@@ -22,6 +22,7 @@
                     <span @click="wxLogin()"><img src="../assets/img/wx_logo.png" alt="" style="width:20px;height:20px;margin-top:6px"></span>
                     <span @click="resetPassword()">重置密码</span>
                     <span @click="register()">注册</span>
+                    <span @click="goLogin()">免密登录</span>
                 </div>
             </div>
         </div>
@@ -56,6 +57,7 @@
                 </Form>
                 <div class="other-login">
                     <span @click="userLogin()">密码登录</span>
+                   
                 </div>
             </div>
         </div>
@@ -189,6 +191,9 @@
             register() {
                 this.loginInfo = 4
             },
+             goLogin(){
+        this.$router.push('/menuPage')
+      },
             // 以下为submit验证并提交
             addInfoSubmit() {
                 if (this.addInfoForm.name && this.addInfoForm.corporation && this.addInfoForm.eamil) {

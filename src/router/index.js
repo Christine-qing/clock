@@ -9,8 +9,12 @@ export default new Router({
         path: '/',
         name: 'login',
         component: (resolve) => require(['@/components/login'], resolve),
+        // beforeEnter: (to, from, next) => {
+        //     //console.log(`to is ${to},from is ${from}`,to,from)
+        //     localStorage.getItem('access_token') ? next() : next({ path: '/Hello' })
+        //     next()
 
-
+        // },
     },
     {
         path: '/user',
