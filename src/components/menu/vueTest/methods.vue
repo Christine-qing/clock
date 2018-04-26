@@ -8,6 +8,8 @@
         <div v-cloak> {{message}}直接结束编译，避免出现闪烁花括号，配合css样式书写</div>
         <Button @click="foo()">{{msg}}<input type="text" v-focus></Button>
         <p id="page">{{content|reverseStr}}</p>
+        <input type="text" v-model="aaa ">
+        <div> {{aaa|validatePhone}} </div>
         <!-- <child message="hello!">第一种props赋值方式</child> -->
         <!-- <child :message="hello2">第二种props赋值方式</child> -->
         <keep-alive>
@@ -41,6 +43,8 @@
             </Form>
             <p  v-changeRed="color">55555</p>
         </div>
+        <span v-bind:title="messages">鼠标提示</span>
+        <br><br><br><br><br><br>
     </div>
 </template>
 
@@ -50,7 +54,8 @@
         changeRed
     } from "../../directives/index"
     import {
-        reverseStr
+        reverseStr,
+        validatePhone
     } from "../../filter/index"
     import child from './child'
     // import chart from '../../../chart/chart'
@@ -82,7 +87,9 @@
                     input2: '',
                     input3: ''
                 },
-                color:"blue"
+                color:"blue",
+                  messages: '页面加载于 ' + new Date().toLocaleString(),
+                  aaa:""
             }
         },
         directives: {
@@ -90,7 +97,8 @@
             changeRed
         }, //自定义指令
         filters: {
-            reverseStr
+            reverseStr,
+            validatePhone
         },
         components: {
             child,
@@ -159,6 +167,7 @@
                 };
                 var p = new Point(1, 2);
             }
+            
         },
     }
 </script>

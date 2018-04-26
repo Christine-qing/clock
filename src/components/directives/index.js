@@ -2,7 +2,6 @@ export const focus = (el) => {
     el.focus()
 }
 export const changeRed = (el, binding) => {
-    debugger
     el.style.backgroundColor="red"
 
     el.style.fontSize = binding.value + 'px';

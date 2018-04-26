@@ -41,7 +41,7 @@
                             <Input v-model="resetPasswordForm.count" placeholder="输入验证码" @on-blur="resetPasswordCount_blur()"></Input>
                             </Col>
                             <Col span="2" offset="1">
-                            <Button style="margin-left:8px" type="primary">发送验证</Button>
+                            <Button style="margin-left:8px" type="primary" @click="sendValidation()" :disabled="disabledState">{{sendText}}</Button>
                             </Col>
                         </Row>
                         <span class="errorInfo">&nbsp;{{resetPasswordcount_error}}</span>
@@ -57,7 +57,6 @@
                 </Form>
                 <div class="other-login">
                     <span @click="userLogin()">密码登录</span>
-                   
                 </div>
             </div>
         </div>
@@ -76,7 +75,7 @@
                             <Input v-model="registerForm.count" placeholder="输入验证码" @on-blur="registerUserCount_blur()"></Input>
                             </Col>
                             <Col span="2" offset="1">
-                            <Button style="margin-left:8px" type="primary">发送验证</Button>
+                            <Button style="margin-left:8px" type="primary" @click="sendValidation()" :disabled="disabledState">{{sendText}}</Button>
                             </Col>
                         </Row>
                         <span class="errorInfo">&nbsp;{{registerUserCount_error}}</span>
@@ -175,7 +174,10 @@
                 addInfoName_error: '',
                 addInfoEamil_error: '',
                 addInfoSubmit_error: '',
-                addInfoCorporation_error: ''
+                addInfoCorporation_error: '',
+                sendText: "发送验证",
+                 timer: null,
+                disabledState: false
             }
         },
         mounted() {},
@@ -191,9 +193,9 @@
             register() {
                 this.loginInfo = 4
             },
-             goLogin(){
-        this.$router.push('/menuPage')
-      },
+            goLogin() {
+                this.$router.push('/menuPage')
+            },
             // 以下为submit验证并提交
             addInfoSubmit() {
                 if (this.addInfoForm.name && this.addInfoForm.corporation && this.addInfoForm.eamil) {
@@ -313,6 +315,26 @@
                     } else {
                         this.addInfoEamil_error = "邮箱格式错误"
                     }
+                }
+            },
+            //发送验证
+            sendValidation() {
+                const count = 59;
+                if (!this.timer) {
+                    this.sendText = count;
+                    this.disabledState = true;
+                    this.timer = setInterval(() => {
+                        if (this.sendText > 0 && this.sendText <= count) {
+                            this.sendText--;
+                            if (this.sendText === 0) {
+                                this.sendText = "发送验证"
+                            }
+                        } else {
+                            this.disabledState = false;
+                            clearInterval(this.timer);
+                            this.timer = null;
+                        }
+                    }, 1000)
                 }
             }
         }
