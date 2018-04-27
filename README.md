@@ -4,14 +4,24 @@
 
 ## Build Setup
 
-``` bash
+
+```
+# node version
+
+>= 4.0.0
+
+# npm version
+
+>= 3.0.0
+
+bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:3001
+# 开发启动 localhost:3001
 npm run dev
 
-# build for production with minification
+# 发布
 npm run build
 
 # build for production and view the bundle analyzer report
