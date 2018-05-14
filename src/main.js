@@ -13,6 +13,7 @@ import inMap from 'inmap'
 import echarts from 'echarts/dist/echarts.min.js';
 import 'iview/dist/styles/iview.css';
 import './components/axios/index'
+import './components/style/base.css'
 
 
 Vue.use(Vuex);

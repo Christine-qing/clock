@@ -6,7 +6,7 @@
             {{message}} 直接跳过不需要编译的标签，加快编译效率
         </div>
         <div v-cloak> {{message}}直接结束编译，避免出现闪烁花括号，配合css样式书写</div>
-        <Button @click="foo()">{{msg}}<input type="text" v-focus></Button>
+        <!-- <Button @click="foo()">{{msg}}<input type="text" v-focus></Button> -->
         <p id="page">{{content|reverseStr}}</p>
         <input type="text" v-model="aaa ">
         <div> {{aaa|validatePhone}} </div>
@@ -41,9 +41,15 @@
                     <Button type="primary" @click="submit()">Submit</Button>
                 </FormItem>
             </Form>
-            <p  v-changeRed="color">55555</p>
+            <p v-changeRed="color">55555</p>
         </div>
         <span v-bind:title="messages">鼠标提示</span>
+        <Steps :current="2" direction="vertical" class="ml100" @click="step()">
+            <Step title="已完成" content="这里是该步骤的描述信息" @click.native="step()"></Step>
+            <Step title="已完成" content="这里是该步骤的描述信息"></Step>
+            <Step title="进行中" content="这里是该步骤的描述信息"></Step>
+            <Step title="待进行" content="这里是该步骤的描述信息"></Step>
+        </Steps>
         <br><br><br><br><br><br>
     </div>
 </template>
@@ -87,9 +93,9 @@
                     input2: '',
                     input3: ''
                 },
-                color:"blue",
-                  messages: '页面加载于 ' + new Date().toLocaleString(),
-                  aaa:""
+                color: "blue",
+                messages: '页面加载于 ' + new Date().toLocaleString(),
+                aaa: ""
             }
         },
         directives: {
@@ -132,9 +138,9 @@
                 console.log(this.$parent, "parent")
                 console.log(this.$children, "children")
                 this.val++;
-                    console.log( window.location.href)
-                    console.log(this.$route.path)
-                    console.log(this.$route.params)
+                console.log(window.location.href)
+                console.log(this.$route.path)
+                console.log(this.$route.params)
             },
             init() {
                 this.$store.dispatch('setData', 8);
@@ -166,8 +172,11 @@
                     return '(' + this.x + ', ' + this.y + ')';
                 };
                 var p = new Point(1, 2);
+            },
+            step() {
+                debugger
+                alert(121)
             }
-            
         },
     }
 </script>
