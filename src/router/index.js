@@ -399,6 +399,16 @@ export default new Router({
         name: 'iviewTable',
         component: (resolve) => require(['@/components/menu/vueTest/iviewTable'], resolve),
     },
+    {
+        path: '/chartInit',
+        name: 'chartInit',
+        component: (resolve) => require(['@/components/menu/vueCharts/chartInit'], resolve),
+    },
+    {
+        path: '/chartMap',
+        name: 'chartMap',
+        component: (resolve) => require(['@/components/menu/vueCharts/chartMap'], resolve),
+    },
 
 
     ]

@@ -1,7 +1,7 @@
 <template>
     <div>
     <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
-        <div id="barChart" :style="{width: '100%', height: '100%'}"></div>
+        <div id="barChart" :style="{width: '100%', height: '300px'}"></div>
     </div>
 </template>
 <script>

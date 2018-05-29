@@ -70,18 +70,24 @@
                 <MenuItem name="8-11"><router-link to="addMarker">addMarker</router-link></MenuItem> 
 
       </Submenu>
-       <Submenu name="9">   
+    <!--    <Submenu name="9">   
         <template slot="title"><Icon type="stats-bars"></Icon>Leaflet</template>
                 <MenuItem name="9-1"><router-link to="leafletInit">leafletInit</router-link></MenuItem>
-                <MenuItem name="9-2"><router-link to="leafletPoint">addPoint</router-link></MenuItem>  
-                <!-- <MenuItem name="9-3"><router-link to="geojson">geojson</router-link></MenuItem>                                     -->
-                <MenuItem name="9-4"><router-link to="leafletCircle">leafletCircle</router-link></MenuItem>  
+                <MenuItem name="9-2"><router-link to="leafletPoint">addPoint</router-link></MenuItem>  -->
+                <!-- <MenuItem name="9-3"><router-link to="geojson">geojson</router-link></MenuItem> -->
+                <!--  <MenuItem name="9-4"><router-link to="leafletCircle">leafletCircle</router-link></MenuItem>  
                 <MenuItem name="9-5"><router-link to="choropleth">choropleth</router-link></MenuItem>    
                 <MenuItem name="9-6"><router-link to="leafletStyle">leafletStyle</router-link></MenuItem>   
                 <MenuItem name="9-7"><router-link to="mapZoom">mapZoom</router-link></MenuItem>    
                  <MenuItem name="9-8"><router-link to="leafletmap">leafletmap</router-link></MenuItem>              
      
+      </Submenu>-->
+ <Submenu name="9">   
+        <template slot="title"><Icon type="stats-bars"></Icon>v-charts</template>
+                <MenuItem name="9-1"><router-link to="chartInit">初始化charts图</router-link></MenuItem>  
+                 <MenuItem name="9-1"><router-link to="chartMap">charts地图</router-link></MenuItem>              
       </Submenu>
+
        <Submenu name="10">   
         <template slot="title"><Icon type="stats-bars"></Icon>regexp</template>
                 <MenuItem name="10-1"><router-link to="createRegexp">create</router-link></MenuItem>        
@@ -133,28 +139,28 @@
   </div>
 </template>
 <script>
-  export default {
-    name: "",
-    data() {
-      return {
-        theme1: 'primary'
-      }
-    },
-    components: {},
-    mounted() {},
-    methods: {}
-  }
+export default {
+  name: "",
+  data() {
+    return {
+      theme1: "primary"
+    };
+  },
+  components: {},
+  mounted() {},
+  methods: {}
+};
 </script>
 
 <style scoped>
-#menuPage{
-  width:100%;
+#menuPage {
+  width: 100%;
 }
-  #menuPage .homePage {
-    color: white
-  }
-  .demoStyle{
-    position:absolute;
-    right:8%;
-  }
+#menuPage .homePage {
+  color: white;
+}
+.demoStyle {
+  position: absolute;
+  right: 8%;
+}
 </style>

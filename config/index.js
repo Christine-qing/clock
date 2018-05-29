@@ -1,3 +1,4 @@
+//主要的项目配置
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 

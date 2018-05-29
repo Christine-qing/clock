@@ -1,3 +1,5 @@
+
+//应用程序入口文件（根目录）
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
@@ -10,15 +12,18 @@ import store from './store/index'
 
 import iView from 'iview';
 import inMap from 'inmap'
+import VCharts from 'v-charts'
 import echarts from 'echarts/dist/echarts.min.js';
 import 'iview/dist/styles/iview.css';
 import './components/axios/index'
 import './components/style/base.css'
+import 'v-charts/lib/style.css'
 
 
 Vue.use(Vuex);
 Vue.use(iView);
 Vue.use(inMap);
+Vue.use(VCharts);
 
 Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
