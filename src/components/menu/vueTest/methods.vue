@@ -18,10 +18,12 @@
         <Button @click="init()">vuex数据传输：11{{this.$store.state.data}}</Button>
         <Button @click="change">watch监控数据变化{{value}}</Button>
         <Button @click.once="foo()">只触发一次的onces{{val}}</Button>
+        <span>watch 观察者模式{{val}}</span>
         <Button v-text="111"></Button>
         <span :style="{ color: activeColor, fontSize: fontSize + 'px' }">style内联样式绑定</span>
         <span :style="classObject">class绑定</span>
-        <input type="text" v-model="value">{{value}}
+        <Button @click="init">我是观察者按钮</Button>
+        <input type="text" v-model="value">{{value}} 
         <button :class="[$style.button, $style.buttonClose]" v-if="message">此处不能为空</button>
         <echartsLine style="width:200px;height:200px" :msg="this.setData"></echartsLine>
         <div style="width:300px;margin-top:100px;border:1px solid black">
@@ -51,6 +53,11 @@
             <Step title="待进行" content="这里是该步骤的描述信息"></Step>
         </Steps>
         <br><br><br><br><br><br>
+
+     <div v-for="item in 5" :key="item">
+         {{item}}
+     </div>
+
     </div>
 </template>
 
@@ -79,7 +86,7 @@
                 test: [
                     1, 2, 3, 5
                 ],
-                value: 5,
+                value: {a:1,b:2},
                 val: 99,
                 activeColor: "red",
                 fontSize: 30,
@@ -117,8 +124,12 @@
             this.estTest()
         },
         watch: {
-            value: function(val, oldval) {
-                console.log(val, oldval)
+            value:{
+                handler(val,oldVal){
+                    console.log("lalala",val,oldVal)
+                } ,
+                deep: true,
+                immediate: true
             }
         },
         methods: {
@@ -146,7 +157,7 @@
                 this.$store.dispatch('setData', 8);
             },
             change() {
-                this.value = 500
+                this.value.a =4
             },
             download() {
                 //用$emit发射出去；$emit(name,val)；name:按需定义，val：需要发射出去的值

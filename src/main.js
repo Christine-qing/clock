@@ -14,10 +14,12 @@ import iView from 'iview';
 import inMap from 'inmap'
 import VCharts from 'v-charts'
 import echarts from 'echarts/dist/echarts.min.js';
+
+// import 'echarts/map/js/china.js';
 import 'iview/dist/styles/iview.css';
-import './components/axios/index'
-import './components/style/base.css'
-import 'v-charts/lib/style.css'
+import './components/axios/index';
+import './components/style/base.css';
+import 'v-charts/lib/style.css';
 
 
 Vue.use(Vuex);

@@ -3,7 +3,7 @@
         <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
         <div class="box">
             <ul class="puzzle-wrap">
-                <li :class="{'puzzle': true, 'puzzle-empty': !puzzle}" v-for="(puzzle,index) in puzzles" v-text="puzzle" @click="moveFn(index)"></li>
+                <li :class="{'puzzle': true, 'puzzle-empty': !puzzle}" v-for="(puzzle,index) in puzzles" :key="index" v-text="puzzle" @click="moveFn(index)"></li>
             </ul>
             <button class="btn btn-warning btn-block btn-reset" @click="render">重置游戏</button>
         </div>

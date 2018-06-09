@@ -46,7 +46,7 @@
                 <MenuItem name="6-2"><router-link to="echartsLine">折线图</router-link></MenuItem>
                 <MenuItem name="6-3"><router-link to="echartsBarLine">折柱图</router-link></MenuItem>  
                 <MenuItem name="6-4"><router-link to="echartsPie">饼图</router-link></MenuItem>
-                <MenuItem name="6-5"></MenuItem>     
+                <MenuItem name="6-5"><router-link to="echartsMap">地图</router-link></MenuItem>     
       </Submenu>
       <Submenu name="7">   
         <template slot="title"><Icon type="stats-bars"></Icon>iview</template>
@@ -54,6 +54,7 @@
                 <MenuItem name="7-2"><router-link to="table">table加颜色</router-link></MenuItem>  
                 <MenuItem name="7-2"><router-link to="upload">上传示例</router-link></MenuItem>                                    
       </Submenu>
+        <!--  
       <Submenu name="8">   
         <template slot="title"><Icon type="stats-bars"></Icon>Mapbox</template>
                 <MenuItem name="8-1"><router-link to="mapInit">mapInit</router-link></MenuItem>
@@ -62,14 +63,14 @@
                 <MenuItem name="8-4"><router-link to="animate">animate</router-link></MenuItem>  
                 <MenuItem name="8-5"><router-link to="mapButton">mapButton</router-link></MenuItem>   
                 <MenuItem name="8-6"><router-link to="getCoordinate">getLatlng</router-link></MenuItem> 
-                <MenuItem name="8-7"><router-link to="addPolygon">addPolygon</router-link></MenuItem> 
+                <MenuItem name="8-7"><router-link to="addPolygon">addPolygon</router-link></MenuItem> -->
                 <!-- <MenuItem name="8-8"><router-link to="addLine">addLine</router-link></MenuItem>     -->
                 <!-- <MenuItem name="8-8"><router-link to="drawnPolygon">drawnPolygon</router-link></MenuItem>                                     -->
-                <MenuItem name="8-9"><router-link to="addEnclosure">add_lnglat</router-link></MenuItem> 
+                <!--      <MenuItem name="8-9"><router-link to="addEnclosure">add_lnglat</router-link></MenuItem> 
                 <MenuItem name="8-10"><router-link to="customized">customized</router-link></MenuItem> 
                 <MenuItem name="8-11"><router-link to="addMarker">addMarker</router-link></MenuItem> 
 
-      </Submenu>
+      </Submenu>-->
     <!--    <Submenu name="9">   
         <template slot="title"><Icon type="stats-bars"></Icon>Leaflet</template>
                 <MenuItem name="9-1"><router-link to="leafletInit">leafletInit</router-link></MenuItem>
@@ -82,6 +83,12 @@
                  <MenuItem name="9-8"><router-link to="leafletmap">leafletmap</router-link></MenuItem>              
      
       </Submenu>-->
+
+       <Submenu name="8">   
+        <template slot="title"><Icon type="stats-bars"></Icon>重构用户管家</template>
+                <MenuItem name="8-1"><router-link to="chartInit">table</router-link></MenuItem>  
+                 <!-- <MenuItem name="8-1"><router-link to="chartMap">charts地图</router-link></MenuItem>               -->
+      </Submenu>
  <Submenu name="9">   
         <template slot="title"><Icon type="stats-bars"></Icon>v-charts</template>
                 <MenuItem name="9-1"><router-link to="chartInit">初始化charts图</router-link></MenuItem>  

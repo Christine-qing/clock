@@ -1,8 +1,8 @@
 <template>
   <div class="game">
-  <Button><router-link to="/menuPage">返回菜单列表</router-link></Button> 
+    <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
     <div class="gameContent">
-      <div v-for="(item,index) in list" class="everyBox" v-on:click='moveBox(item,index)'>{{item}}</div>
+      <div v-for="(item,index) in list" :key="item" class="everyBox" @click='moveBox(item,index)'>{{item}}</div>
     </div>
     <button v-on:click="reset()" class="resetGame">重新排序</button>
     <button v-on:click="stop()" class="resetGame">停止</button>
@@ -78,14 +78,14 @@
         var t = setTimeout(this.reset, 100)
         this.t = t;
       },
-      randomList(list) {
-        /*
-         * 将数组的每个数字和随机数*10做比较，
-         * */
-        list.sort((a, b) => {
-          return a > Math.random() * 10;
-        })
-      },
+      /*
+       * 将数组的每个数字和随机数*10做比较，
+       * */
+      // randomList(list) {
+      //   list.sort((a, b) => {
+      //     return a > Math.random() * 10;
+      //   })
+      // },
       /**
        * @stop停止按钮
        * */
@@ -112,8 +112,10 @@
           this.$set(this.list, index, void 0);
         }
         //判断上下左右  every
-        var newPuzzles = [1, 2, 3, 4, 5, 6, 7, 8, void 0]
+        let newPuzzles = [1, 2, 3, 4, 5, 6, 7, 8, void 0]
         const isPass = newPuzzles.every((e, i) => {
+          debugger
+          console.log(e,i)
           e === i + 1
         })
         console.log(isPass)

@@ -35,7 +35,7 @@
                         axisPointer: {
                             type: 'cross',
                             crossStyle: {
-                                color: '#999'
+                                color: 'red'
                             }
                         }
                     },

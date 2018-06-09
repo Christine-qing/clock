@@ -7,6 +7,7 @@
   width="600px" 
   height="300px" 
   :legend-visible=false
+  :loading=true
  ></ve-line>
   </div>
 </template>
@@ -38,11 +39,18 @@ export default {
         ],
        
       };
-       loading:true,
+      
+     
       this.chartSettings = {
         metrics: ["成本", "利润"],
-        dimension: ["日期"]
+        dimension: ["日期"],
+          area:true,
+        //   areaStyle:{
+        //   // color:['# 000000','＃000033']
+        // }
       };
+     
+     
     }
   }
 };

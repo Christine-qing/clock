@@ -23,6 +23,12 @@ export default new Router({
 
     },
     {
+        path: '*',
+        name: '404',
+        component: (resolve) => require(['@/components/menu/menuPage'], resolve),
+
+    },
+    {
         path: '/hello',
         name: 'hello',
         component: (resolve) => require(['@/components/Hello'], resolve),
@@ -123,6 +129,12 @@ export default new Router({
         path: '/echartsPie',
         name: 'echartsPie',
         component: (resolve) => require(['@/components/menu/echartsDemo/echartsPie'], resolve),
+
+    },
+    {
+        path: '/echartsMap',
+        name: 'echartsMap',
+        component: (resolve) => require(['@/components/menu/echartsDemo/echartsMap'], resolve),
 
     },
     {
