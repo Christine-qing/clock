@@ -2,7 +2,9 @@
     <div>
         <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
         <div id="lineChart" :style="{width: '600px', height: '300px'}"></div>
+    
     </div>
+    
 </template>
 
 <script>
@@ -61,7 +63,7 @@
                     series: [{
                         name: '最低气温',
                         type: 'line',
-                        data: [20.0, 40.9, 70.0, 40.2, 120.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        data: [20.0, 40.9, 70.0, 40.2, 120.6, 76.7, 20, 162.2, 32.6, 20.0, 6.4, 3.3],
                         areaStyle: {
                 normal: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{

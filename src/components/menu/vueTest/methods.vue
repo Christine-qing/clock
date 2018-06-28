@@ -94,7 +94,7 @@
                     fontSize: "20px",
                     color: "blue"
                 },
-                setData: [100, 20, 50, 60, 10, 20, 56, 60, 80, 30],
+                setData: [100, 20, 50, 60, 10, 20, 56, 60, 80, 10],
                 formLeft: {
                     input1: '',
                     input2: '',

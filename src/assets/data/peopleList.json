@@ -1,0 +1,22 @@
+[{
+    "title": "人群名称",
+    "key": "name"
+},
+{
+    "title": "用户数量",
+    "key": "cont"
+},
+{
+   "title": "人群来源",
+    "key": "source"
+},{
+    "title":"状态",
+    "key":"state"
+},{
+    "title":"最后更新时间",
+    "key":"date"
+},{
+    "title":"操作",
+    "key":"operation"
+}
+]

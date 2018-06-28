@@ -138,6 +138,12 @@ export default new Router({
 
     },
     {
+        path: '/echartsString',
+        name: 'echartsString',
+        component: (resolve) => require(['@/components/menu/echartsDemo/echartsString'], resolve),
+
+    },
+    {
         path: '/upload',
         name: 'upload',
         component: (resolve) => require(['@/components/menu/iviewTest/upload'], resolve),
@@ -168,6 +174,12 @@ export default new Router({
 
     },
     {
+        path: '/rightPage',
+        name: 'rightPage',
+        component: (resolve) => require(['@/components/menu/vueTest/rightPage'], resolve),
+
+    },
+    {
         path: '/menu',
         name: 'menu',
         component: (resolve) => require(['@/components/menu/iviewTest/menu'], resolve),
@@ -176,6 +188,12 @@ export default new Router({
         path: '/table',
         name: 'table',
         component: (resolve) => require(['@/components/menu/iviewTest/table'], resolve),
+
+    },
+    {
+        path: '/userTable',
+        name: 'userTable',
+        component: (resolve) => require(['@/components/menu/iviewTest/userTable'], resolve),
 
     },
     {

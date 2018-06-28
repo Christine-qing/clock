@@ -51,8 +51,8 @@
         var perms = {
           name: '',
         };
-        debugger
-        this.$axios.post(url, perms)
+        // debugger
+        this.$axios.get(url)
           // this.$axios({
           //   method: "get",
           //   baseurl: '',
@@ -63,8 +63,8 @@
           // })
           .then((response) => {
             //  window.location = e
-            window.location.href = "http://www.baidu.com";
-            debugger
+            // window.location.href = "http://www.baidu.com";
+     
             this.name = response.data.name;
             this.age = response.data.age;
             this.phone = response.data.phone;

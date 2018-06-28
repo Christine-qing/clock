@@ -19,6 +19,7 @@
                 <MenuItem name="3-3"><router-link to="testVuex_mo" >vuex测试</router-link></MenuItem>
                 <MenuItem name="3-4"><router-link to="testVuex_yin" >vuex2</router-link></MenuItem>
                 <MenuItem name="3-5"><router-link to="methods" >methods</router-link></MenuItem>
+                <MenuItem name="3-6"><router-link to="rightPage" >右侧抽屉式弹框</router-link></MenuItem>
              
           <!-- </MenuGroup>-->
         </Submenu>
@@ -47,12 +48,16 @@
                 <MenuItem name="6-3"><router-link to="echartsBarLine">折柱图</router-link></MenuItem>  
                 <MenuItem name="6-4"><router-link to="echartsPie">饼图</router-link></MenuItem>
                 <MenuItem name="6-5"><router-link to="echartsMap">地图</router-link></MenuItem>     
+                <MenuItem name="6-6"><router-link to="echartsString">配置echarts</router-link></MenuItem>     
+      
       </Submenu>
       <Submenu name="7">   
         <template slot="title"><Icon type="stats-bars"></Icon>iview</template>
                 <MenuItem name="7-1"><router-link to="menu">3级菜单</router-link></MenuItem>
                 <MenuItem name="7-2"><router-link to="table">table加颜色</router-link></MenuItem>  
-                <MenuItem name="7-2"><router-link to="upload">上传示例</router-link></MenuItem>                                    
+                <MenuItem name="7-3"><router-link to="upload">上传示例</router-link></MenuItem>  
+                <MenuItem name="7-4"><router-link to="userTable">用户list</router-link></MenuItem>                                    
+
       </Submenu>
         <!--  
       <Submenu name="8">   
