@@ -194,7 +194,7 @@
                 this.loginInfo = 4
             },
             goLogin() {
-                this.$router.push('/menuPage')
+                this.$router.push('/Hello')
             },
             // 以下为submit验证并提交
             addInfoSubmit() {

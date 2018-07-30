@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Table :ref="refs" :columns="columnsList" :data="thisTableData" border highlight-row :loading="false" :height="height?height:'500'"></Table>
+    <Table :ref="refs" :columns="columnsList" :data="thisTableData" border highlight-row :loading="false" :height="height?height:'500'" @on-sort-change="sortChange"></Table>
     <br>
     <Page :total="total" style="text-align: right" @on-change="pageChange" :page-size="10" @on-page-size-change="perPageHandle"></Page>
   </div>
@@ -147,8 +147,8 @@
   /**
    * 列表-操作-详情
    */
-   const detailsButton =  (vm, h, currentRow, index) =>{
-       return h('span', {
+  const detailsButton = (vm, h, currentRow, index) => {
+    return h('span', {
       on: {
         click: () => {
           vm.$emit('on-details', index)
@@ -171,11 +171,11 @@
         }
       }
     }, '详情')])
-   }
-   /**
+  }
+  /**
    * 列表-操作-冻结
    */
- const freezeButton =  (vm, h, currentRow, index) =>{
+  const freezeButton = (vm, h, currentRow, index) => {
     return h('Poptip', {
       props: {
         confirm: true,
@@ -201,9 +201,7 @@
         }
       }, '冻结')
     ])
-   }
-
-  
+  }
   export default {
     name: 'canEditTable',
     props: {
@@ -294,9 +292,9 @@
                   children.push(downloadButton(this, h, currentRowData, param.index));
                 } else if (item === "portraits") {
                   children.push(portraitsButton(this, h, currentRowData, param.index));
-                }else if( item === "detailst"){
+                } else if (item === "detailst") {
                   children.push(detailsButton(this, h, currentRowData, param.index));
-                }else if(item === "freeze"){
+                } else if (item === "freeze") {
                   children.push(freezeButton(this, h, currentRowData, param.index));
                 }
               });
@@ -319,6 +317,9 @@
       },
       perPageHandle(size) {
         this.$emit('page-size-change', size)
+      },
+      sortChange(val){
+        this.$emit('sort-change',val)
       }
     },
     watch: {

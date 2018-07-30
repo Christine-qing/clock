@@ -14,6 +14,7 @@ import iView from 'iview';
 import inMap from 'inmap'
 import VCharts from 'v-charts'
 import echarts from 'echarts/dist/echarts.min.js';
+import util from './util.js'
 
 // import 'echarts/map/js/china.js';
 import 'iview/dist/styles/iview.css';
@@ -30,6 +31,7 @@ Vue.use(VCharts);
 Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
+Vue.prototype.$utils = util;
 
 /* eslint-disable no-new */
 new Vue({

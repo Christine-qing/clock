@@ -150,6 +150,12 @@ export default new Router({
 
     },
     {
+        path: '/treeTest',
+        name: 'treeTest',
+        component: (resolve) => require(['@/components/menu/iviewTest/treeTest'], resolve),
+
+    },
+    {
         path: '/point',
         name: 'point',
         component: (resolve) => require(['@/components/menu/ishowMap/point'], resolve),
@@ -173,21 +179,16 @@ export default new Router({
         component: (resolve) => require(['@/components/menu/vueTest/vuetest'], resolve),
 
     },
-    {
-        path: '/rightPage',
-        name: 'rightPage',
-        component: (resolve) => require(['@/components/menu/vueTest/rightPage'], resolve),
 
-    },
     {
         path: '/menu',
         name: 'menu',
         component: (resolve) => require(['@/components/menu/iviewTest/menu'], resolve),
 
     }, {
-        path: '/table',
-        name: 'table',
-        component: (resolve) => require(['@/components/menu/iviewTest/table'], resolve),
+        path: '/colorTable',
+        name: 'colorTable',
+        component: (resolve) => require(['@/components/menu/iviewTest/colorTable'], resolve),
 
     },
     {
@@ -382,18 +383,6 @@ export default new Router({
 
     },
     {
-        path: '/testVuex_mo',
-        name: 'testVuex_mo',
-        component: (resolve) => require(['@/components/menu/vueTest/testVuex_mo'], resolve),
-
-    },
-    {
-        path: '/testVuex_yin',
-        name: 'testVuex_yin',
-        component: (resolve) => require(['@/components/menu/vueTest/testVuex_yin'], resolve),
-
-    },
-    {
         path: '/ts_init',
         name: 'ts_init',
         component: (resolve) => require(['@/components/menu/typeScript/ts_init'], resolve),
@@ -439,7 +428,16 @@ export default new Router({
         name: 'chartMap',
         component: (resolve) => require(['@/components/menu/vueCharts/chartMap'], resolve),
     },
-
+    {
+        path: '/boxDrag',
+        name: 'boxDrag',
+        component: (resolve) => require(['@/components/menu/vueCharts/boxDrag'], resolve),
+    },
+    {
+        path: '/test2',
+        name: 'test2',
+        component: (resolve) => require(['@/components/common/test/test2'], resolve),
+    },
 
     ]
 })

@@ -59,6 +59,7 @@
                 },
                 oTopPage: null,
                 isDisplay: "block",
+                timer: null,
                 //   show:false,
                 //   text:"打开",
                 //   open:true,
@@ -115,7 +116,14 @@
                 if (this.inif.oHour === 14 && this.inif.oMinute === 0) {
                     alert("该吃饭了")
                 }
-                let t = setTimeout(this.time, 1000)
+                this.timer = setTimeout(this.time, 1000)
+                
+                // 第二种跳转页面清楚计时器的方法
+                this.$once('hook:beforeDestroy', () => {
+                    clearInterval(this.timer);
+                })
+
+                console.log(this.inif.seconds)
             },
             close() {
                 this.isDisplay = "none"
@@ -137,7 +145,12 @@
             foo() {
                 this.count++
             }
-        }
+        },
+        // 第一种切换页面后清除计时器方法
+        // beforeDestroy() {
+        //     clearInterval(this.timer);
+        //     this.timer = null;
+        // }
     }
 </script>
 

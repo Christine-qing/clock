@@ -3,32 +3,13 @@
         <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
         <Card style="width:1100px">
             <Select style="width:150px;margin-bottom:10px" placeholder="请选择人群名称">
-                        <Option v-for="item in cityList" :value="item.value" :key="item.value" >{{ item.label }}</Option>
-                    </Select>
-            <Input v-model="value13" icon="ios-search" placeholder="请输入人群名称" style="width:180px;margin-bottom:10px"></Input>
+               <Option v-for="item in cityList" :value="item.value" :key="item.value" >{{ item.label }}</Option>
+            </Select>
+            <Input v-model="sreachData" icon="ios-search" placeholder="请输入人群名称" style="width:180px;margin-bottom:10px" @on-enter="sreachPeople"></Input>
             <Button type="primary" style="position:absolute;top:10px;right:20px" @click="creatPeople()">+ 创建人群</Button>
-            <editTable v-model="storeData" :columns-list="storeDataColumns" :total="total" @on-send="peopleSend" @on-portraits="peoplePortraits" @on-edit="peopleEdit" @on-download="peopleDownload" @on-delete="handleDel" @page-change="pageChange" @switch-change="switchChange"></editTable>
-            <!-- <Table :columns="columns" :data="data"></Table> -->
-            <!-- <Tabs type="card">
-                                <TabPane label="全部">
-                                    <editTable v-model="storeData" :columns-list="storeDataColumns"  :total="total"  @on-send="peopleSend" @on-portraits="peoplePortraits" @on-edit="peopleEdit" @on-download="peopleDownload" @on-delete="handleDel" @page-change="pageChange"></editTable>
-                                </TabPane>
-                                <TabPane label="待审核">
-                                    <editTable v-model="storeData" :columns-list="storeDataColumns" @on-delete="handleDel" :total="total" @page-change="pageChange" @on-send="peopleSend"></editTable>
-                                </TabPane>
-                                <TabPane label="审核拒绝">
-                                    <editTable v-model="storeData" :columns-list="storeDataColumns" @on-delete="handleDel" :total="total" @page-change="pageChange" @on-send="peopleSend"></editTable>
-                                </TabPane>
-                                <TabPane label="审核通过">
-                                    <editTable v-model="storeData" :columns-list="storeDataColumns" @on-delete="handleDel" :total="total" @page-change="pageChange" @on-send="peopleSend"></editTable>
-                                </TabPane>
-                                <TabPane label="画像人群">
-                                    <editTable v-model="storeData" :columns-list="storeDataColumns" @on-delete="handleDel" :total="total" @page-change="pageChange" @on-send="peopleSend"></editTable>
-                                </TabPane>
-                                <TabPane label="投放人群">
-                                    <editTable v-model="storeData" :columns-list="storeDataColumns" @on-delete="handleDel" :total="total" @page-change="pageChange" @on-send="peopleSend"></editTable>
-                                </TabPane>
-                            </Tabs> -->
+            <editTable v-model="storeData" :columns-list="storeDataColumns" :total="total" @on-send="peopleSend" @on-portraits="peoplePortraits" @on-edit="peopleEdit" @on-download="peopleDownload" @on-delete="handleDel" @page-change="pageChange" @switch-change="switchChange"
+                @sort-change="sortChange"></editTable>
+  
             <br>
         </Card>
     </div>
@@ -50,6 +31,7 @@
                         title: '用户数量',
                         align: 'center',
                         key: 'cont',
+                        sortable: "custom"
                     },
                     {
                         title: '人群来源',
@@ -60,7 +42,7 @@
                         title: '状态',
                         align: 'center',
                         key: 'status',
-                        // width: 100,
+                        width: 150,
                         render: (h, params) => {
                             const row = params.row;
                             const color = row.status === 1 ? 'blue' : row.status === 2 ? 'green' : 'red';
@@ -77,14 +59,15 @@
                         title: '最后更新时间',
                         align: 'center',
                         key: 'date',
-                        width: 150
+                        width: 150,
+                        sortable: 'custom'
                     },
                     {
                         title: '操作',
                         align: 'center',
                         width: 300,
                         key: 'handle',
-                        handle: ['send', 'portraits', 'edit', 'download', 'delete','detailst','freeze' ]
+                        handle: ['send', 'portraits', 'edit', 'download', 'delete', 'detailst', 'freeze']
                     },
                     {
                         title: '测试',
@@ -98,7 +81,7 @@
                 ],
                 storeData: [],
                 total: 0,
-                value13: '',
+                sreachData: '',
                 cityList: [{
                         value: '人群1',
                         label: '人群1'
@@ -126,6 +109,11 @@
                         this.storeData = response.data.list;
                         this.total = response.data.total;
                     })
+            },
+            // 搜索
+            sreachPeople() {
+                console.log(this.sreachData)
+                this.$Message.success('回车执行搜索');
             },
             // 投放
             peopleSend(index) {
@@ -160,6 +148,16 @@
                     this.$Message.success("开关已关闭")
                 } else {
                     this.$Message.success("开关已开启")
+                }
+            },
+            // 排序
+            sortChange(val) {
+                if (val.order === "asc") {
+                    this.$Message.success("升序")
+                } else if (val.order === "desc") {
+                    this.$Message.success("降序")
+                } else if (val.order === "normal") {
+                    this.$Message.success("正常顺序")
                 }
             }
         }

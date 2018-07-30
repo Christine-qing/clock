@@ -34,8 +34,8 @@ let pieOption = {
     },
     series: {
         type: 'pie',
-        radius: ['30px', '40px'],
-        center: ['50%', '50%'],
+        radius: '55%',
+        center: ['50%', '60%'],
         label: {
             normal: {
                 position: 'center',
@@ -45,6 +45,13 @@ let pieOption = {
                     fontWeight: 'normal',
                     fontSize: 14
                 }
+            }
+        },
+        itemStyle: {
+            emphasis: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
             }
         },
         data: []
@@ -336,7 +343,7 @@ let barLandscapeOption = {
     //         normal: {
     //             show: false,
     //             position: 'right',
-                
+
     //         }
     //     }
     // }]
@@ -463,7 +470,7 @@ let barPortraitOption = {
         type: 'value',
         name: '数量',
         min: 0,
-        max: 200,
+        // max: 200,
         interval: 50,
         nameGrap: 50,
         type: 'value',
@@ -479,7 +486,7 @@ let barPortraitOption = {
             textStyle: {
                 color: '#707070'
             },
-            formatter: '{value} 人'
+            formatter: '{value} '
         },
         axisTick: {
             show: false
@@ -497,7 +504,7 @@ let barPortraitOption = {
     // animationDurationUpdate: 1200,
     series: {
         type: 'bar', //如为折线图，type改为line
-        barWidth: 20,
+        barWidth: '20%',
         itemStyle: {
             normal: {
                 color: '#42aaf3'
@@ -691,7 +698,7 @@ let testBarOption = {
         right: '4%',
         bottom: '3%',
         containLabel: true
-    }, color:  ['#43A3FB', '#1FCD6D', '#95CF2F', '#F9D149', '#F9A349', '#975FDD', '#6962FC', '#3563EB', '#817BFB', '#63B1FB', '#A7D74F', '#FBB165', '#45D583', '#B7B3FE', '#A3D1FE', '#CBE799', '#FED3A5', '#91E7B7', '#FF4045'],
+    }, color: ['#43A3FB', '#1FCD6D', '#95CF2F', '#F9D149', '#F9A349', '#975FDD', '#6962FC', '#3563EB', '#817BFB', '#63B1FB', '#A7D74F', '#FBB165', '#45D583', '#B7B3FE', '#A3D1FE', '#CBE799', '#FED3A5', '#91E7B7', '#FF4045'],
 }
 
 

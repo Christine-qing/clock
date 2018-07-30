@@ -1,6 +1,6 @@
 <template>
     <div>
-        子组件页面收到的父组件的值： {{this.message}}
+        子组件页面收到的父组件的值： {{this.message}}11
         wouldzujian{{data}}
         <div v-if="index===0">当index等于0时显示</div>
         <div v-if="index===1">当index等于1时显示</div>

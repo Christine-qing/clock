@@ -1,21 +1,7 @@
 <template>
     <div class="storeIndex ">
-        <!-- <ul class="store-header clearfix">
-            <li class="user-icon fl"></li>
-            <li class="user-name fl">店缘</li>
-            <li class="update-user fl">
-                <Button type="primary">更新授权</Button>
-            </li>
-            <li class="add-user fl">
-                <Button type="primary">新增授权</Button>
-            </li>
-        </ul> -->
-        <!-- <ul>
-        
-            <Button type="primary" size="large">Large</Button>
-            <Button type="primary">Default</Button>
-        </ul> -->
-        <echartsLine style="width:500px;height:200px" :msg="this.setData"></echartsLine>
+
+        <echartsLine  :msg="this.setData"></echartsLine>
     </div>
 </template>
 

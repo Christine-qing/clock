@@ -12,6 +12,12 @@
         <div> {{aaa|validatePhone}} </div>
         <!-- <child message="hello!">第一种props赋值方式</child> -->
         <!-- <child :message="hello2">第二种props赋值方式</child> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <keep-alive>
             <child v-for="item in test" :key="item" :message="item">第三种props方式循环展开</child>
         </keep-alive>
@@ -23,9 +29,9 @@
         <span :style="{ color: activeColor, fontSize: fontSize + 'px' }">style内联样式绑定</span>
         <span :style="classObject">class绑定</span>
         <Button @click="init">我是观察者按钮</Button>
-        <input type="text" v-model="value">{{value}} 
+        <input type="text" v-model="value">{{value}}
         <button :class="[$style.button, $style.buttonClose]" v-if="message">此处不能为空</button>
-        <echartsLine style="width:200px;height:200px" :msg="this.setData"></echartsLine>
+        <!-- <echartsLine style="width:500px;height:200px" :msg="this.setData"></echartsLine> -->
         <div style="width:300px;margin-top:100px;border:1px solid black">
             <p>登陆之完善信息</p>
             <Form :model="formLeft" label-position="left" :label-width="100">
@@ -46,17 +52,9 @@
             <p v-changeRed="color">55555</p>
         </div>
         <span v-bind:title="messages">鼠标提示</span>
-        <Steps :current="2" direction="vertical" class="ml100" @click="step()">
-            <Step title="已完成" content="这里是该步骤的描述信息" @click.native="step()"></Step>
-            <Step title="已完成" content="这里是该步骤的描述信息"></Step>
-            <Step title="进行中" content="这里是该步骤的描述信息"></Step>
-            <Step title="待进行" content="这里是该步骤的描述信息"></Step>
-        </Steps>
         <br><br><br><br><br><br>
-
-     <div v-for="item in 5" :key="item">
-         {{item}}
-     </div>
+       sfsad
+        <div :style="{width:width+'px',height:'200px',border:'1px solid red',margin:'20px'}" ></div>
 
     </div>
 </template>
@@ -86,7 +84,10 @@
                 test: [
                     1, 2, 3, 5
                 ],
-                value: {a:1,b:2},
+                value: {
+                    a: 1,
+                    b: 2
+                },
                 val: 99,
                 activeColor: "red",
                 fontSize: 30,
@@ -102,7 +103,8 @@
                 },
                 color: "blue",
                 messages: '页面加载于 ' + new Date().toLocaleString(),
-                aaa: ""
+                aaa: "",
+                width:100
             }
         },
         directives: {
@@ -124,20 +126,21 @@
             this.estTest()
         },
         watch: {
-            value:{
-                handler(val,oldVal){
-                    console.log("lalala",val,oldVal)
-                } ,
+            value: {
+                handler(val, oldVal) {
+                    console.log("lalala", val, oldVal)
+                },
                 deep: true,
                 immediate: true
             }
         },
         methods: {
             updateMessage() {
+                 const id = this.$route.params.list
+                console.log(this.$el.textContent, this.message) // => '没有更新'
                 this.message = '更新完成'
-                console.log(this.$el.textContent) // => '没有更新'
                 this.$nextTick(function() {
-                    console.log(this.$el.textContent) // => '更新完成'
+                    console.log(this.$el.textContent, this.message) // => '更新完成'
                 })
             },
             foo() {
@@ -157,7 +160,7 @@
                 this.$store.dispatch('setData', 8);
             },
             change() {
-                this.value.a =4
+                this.value.a = 4
             },
             download() {
                 //用$emit发射出去；$emit(name,val)；name:按需定义，val：需要发射出去的值
@@ -210,5 +213,10 @@
     }
     .buttonClose {
         background-color: red;
+    }
+    .textBox {
+       width:100px;
+       height:300px;
+       border:1px solid red;
     }
 </style>

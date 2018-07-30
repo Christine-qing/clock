@@ -13,34 +13,13 @@
 
       <Submenu name="3">
         <template slot="title"><Icon type="stats-bars"></Icon>vue</template>
-           <!-- <MenuGroup title="使用">-->
+ 
                 <MenuItem name="3-1"><router-link to="axios" >axiosi与动画</router-link></MenuItem>
                 <MenuItem name="3-2"><router-link to="vuetest" tag="p">vue组件</router-link></MenuItem>
-                <MenuItem name="3-3"><router-link to="testVuex_mo" >vuex测试</router-link></MenuItem>
-                <MenuItem name="3-4"><router-link to="testVuex_yin" >vuex2</router-link></MenuItem>
-                <MenuItem name="3-5"><router-link to="methods" >methods</router-link></MenuItem>
-                <MenuItem name="3-6"><router-link to="rightPage" >右侧抽屉式弹框</router-link></MenuItem>
-             
-          <!-- </MenuGroup>-->
+                <MenuItem name="3-5"><router-link :to="{name:'methods',params:{list:[1,2,3]}}" >methods</router-link></MenuItem>
+ 
         </Submenu>
-         <!-- <Submenu name="4">
-        <template slot="title"><Icon type="stats-bars"></Icon>立德</template>
-                <MenuItem name="4-1"><router-link to="lideTest">九宫格</router-link></MenuItem>
-                <MenuItem name="4-2"><router-link to="busTrip">地铁公交查询</router-link></MenuItem>
-                <MenuItem name="4-3"><router-link to="mapRadius">原点+半径</router-link></MenuItem>  
-                <MenuItem name="4-4"><router-link to="mapFence">打点围栏</router-link></MenuItem>
-                <MenuItem name="4-5"><router-link to="anchor">锚点工具</router-link></MenuItem> 
-                <MenuItem name="4-6"><router-link to="point">打点工具</router-link></MenuItem> 
-                <MenuItem name="4-6"><router-link to="fenceCenter">中心点</router-link></MenuItem>      
-      </Submenu> -->
-        <!-- <Submenu name="5">
-        <template slot="title"><Icon type="stats-bars"></Icon>智数</template>
-                <MenuItem name="5-1"><router-link to="listPage">列表页面</router-link></MenuItem>
-                <MenuItem name="5-2"><router-link to="projectReport">项目报告</router-link></MenuItem>
-                <MenuItem name="5-3"><router-link to="newProject">新建项目</router-link></MenuItem>  
-                <MenuItem name="5-4"><router-link to="reportForm">右侧报表</router-link></MenuItem>
-                <MenuItem name="5-5"></MenuItem>     
-      </Submenu> -->
+
        <Submenu name="6">
         <template slot="title"><Icon type="stats-bars"></Icon>Echarts</template>
                 <MenuItem name="6-1"><router-link to="echartsBar">柱状图</router-link></MenuItem>
@@ -54,55 +33,24 @@
       <Submenu name="7">   
         <template slot="title"><Icon type="stats-bars"></Icon>iview</template>
                 <MenuItem name="7-1"><router-link to="menu">3级菜单</router-link></MenuItem>
-                <MenuItem name="7-2"><router-link to="table">table加颜色</router-link></MenuItem>  
+                <MenuItem name="7-2"><router-link to="colorTable">table加颜色</router-link></MenuItem>  
                 <MenuItem name="7-3"><router-link to="upload">上传示例</router-link></MenuItem>  
                 <MenuItem name="7-4"><router-link to="userTable">用户list</router-link></MenuItem>                                    
+                <MenuItem name="7-5"><router-link to="treeTest">tree树型控件</router-link></MenuItem>                                    
 
       </Submenu>
-        <!--  
-      <Submenu name="8">   
-        <template slot="title"><Icon type="stats-bars"></Icon>Mapbox</template>
-                <MenuItem name="8-1"><router-link to="mapInit">mapInit</router-link></MenuItem>
-                <MenuItem name="8-2"><router-link to="mapStyle">mapStyle</router-link></MenuItem>
-                <MenuItem name="8-3"><router-link to="map3d">map3d</router-link></MenuItem>  
-                <MenuItem name="8-4"><router-link to="animate">animate</router-link></MenuItem>  
-                <MenuItem name="8-5"><router-link to="mapButton">mapButton</router-link></MenuItem>   
-                <MenuItem name="8-6"><router-link to="getCoordinate">getLatlng</router-link></MenuItem> 
-                <MenuItem name="8-7"><router-link to="addPolygon">addPolygon</router-link></MenuItem> -->
-                <!-- <MenuItem name="8-8"><router-link to="addLine">addLine</router-link></MenuItem>     -->
-                <!-- <MenuItem name="8-8"><router-link to="drawnPolygon">drawnPolygon</router-link></MenuItem>                                     -->
-                <!--      <MenuItem name="8-9"><router-link to="addEnclosure">add_lnglat</router-link></MenuItem> 
-                <MenuItem name="8-10"><router-link to="customized">customized</router-link></MenuItem> 
-                <MenuItem name="8-11"><router-link to="addMarker">addMarker</router-link></MenuItem> 
-
-      </Submenu>-->
-    <!--    <Submenu name="9">   
-        <template slot="title"><Icon type="stats-bars"></Icon>Leaflet</template>
-                <MenuItem name="9-1"><router-link to="leafletInit">leafletInit</router-link></MenuItem>
-                <MenuItem name="9-2"><router-link to="leafletPoint">addPoint</router-link></MenuItem>  -->
-                <!-- <MenuItem name="9-3"><router-link to="geojson">geojson</router-link></MenuItem> -->
-                <!--  <MenuItem name="9-4"><router-link to="leafletCircle">leafletCircle</router-link></MenuItem>  
-                <MenuItem name="9-5"><router-link to="choropleth">choropleth</router-link></MenuItem>    
-                <MenuItem name="9-6"><router-link to="leafletStyle">leafletStyle</router-link></MenuItem>   
-                <MenuItem name="9-7"><router-link to="mapZoom">mapZoom</router-link></MenuItem>    
-                 <MenuItem name="9-8"><router-link to="leafletmap">leafletmap</router-link></MenuItem>              
-     
-      </Submenu>-->
+ 
 
        <Submenu name="8">   
-        <template slot="title"><Icon type="stats-bars"></Icon>重构用户管家</template>
-                <MenuItem name="8-1"><router-link to="chartInit">table</router-link></MenuItem>  
-                 <!-- <MenuItem name="8-1"><router-link to="chartMap">charts地图</router-link></MenuItem>               -->
+        <template slot="title"><Icon type="stats-bars"></Icon>CDP</template>
+                <MenuItem name="8-1"><router-link to="chartInit">v-chart</router-link></MenuItem>  
+                <MenuItem name="8-2"><router-link to="chartMap">v-chart-map</router-link></MenuItem>  
+                <MenuItem name="8-3"><router-link to="boxDrag">拖拽效果</router-link></MenuItem>  
       </Submenu>
- <Submenu name="9">   
+      <Submenu name="9">   
         <template slot="title"><Icon type="stats-bars"></Icon>v-charts</template>
                 <MenuItem name="9-1"><router-link to="chartInit">初始化charts图</router-link></MenuItem>  
-                 <MenuItem name="9-1"><router-link to="chartMap">charts地图</router-link></MenuItem>              
-      </Submenu>
-
-       <Submenu name="10">   
-        <template slot="title"><Icon type="stats-bars"></Icon>regexp</template>
-                <MenuItem name="10-1"><router-link to="createRegexp">create</router-link></MenuItem>        
+                <MenuItem name="9-1"><router-link to="chartMap">charts地图</router-link></MenuItem>              
       </Submenu>
        <Submenu name="11">   
         <template slot="title"><Icon type="stats-bars"></Icon>inMap</template>
@@ -118,15 +66,12 @@
      
      
       </Submenu>
-       <!-- <Submenu name="12">   
-        <template slot="title"><Icon type="stats-bars"></Icon>ts</template>
-                <MenuItem name="12-1"><router-link to="ts_init">ts_init</router-link></MenuItem>        
-      </Submenu> -->
+   
       <Submenu name="13">   
         <template slot="title"><Icon type="stats-bars"></Icon>Bmap</template>
                 <MenuItem name="13-1"><router-link to="bmap_init">bmap_init</router-link></MenuItem>    
                 <MenuItem name="13-2"><router-link to="bmap_Control">bmap_Control</router-link></MenuItem>      
-                 <MenuItem name="13-3"><router-link to="bmap_overlay">bmap_overlay</router-link></MenuItem>                  
+                <MenuItem name="13-3"><router-link to="bmap_overlay">bmap_overlay</router-link></MenuItem>                  
       </Submenu>
        <Submenu name="14">   
         <template slot="title"><Icon type="stats-bars"></Icon>storeProject</template>
@@ -155,7 +100,10 @@ export default {
   name: "",
   data() {
     return {
-      theme1: "primary"
+      theme1: "primary",
+      id:1212,
+      name:"张一",
+      age:18
     };
   },
   components: {},

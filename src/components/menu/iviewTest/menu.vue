@@ -1,11 +1,11 @@
 <template>
     <div>
-        <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
-        <Menu :theme="theme2" active-name="1-1" :open-names="['1']">
+        <!-- <Button><router-link to="/menuPage">返回菜单列表</router-link></Button>
+        <Menu :theme="theme2" :active-name="active" :open-names="['2']">
             <Submenu name='market'>
                 <template slot="title">
-                                        <i class="iconfont icon-icon-test2"></i>
-                                        <span class="layout-text">市场监控</span>
+           <i class="iconfont icon-icon-test2"></i>
+            <span class="layout-text">市场监控</span>
 </template>
        <Submenu name='estate'>
 <template slot="title">
@@ -33,15 +33,34 @@
     <a href="http://www.baidu.com">百度1</a>
       <a href="http://www.baidu.com">百度2</a>
         <a href="http://www.baidu.com">百度3</a>
-    
+
+     -->
+
+
+      <Menu theme="light"  :active-name='activeName' >
+        <MenuGroup title="内容管理" v-for="(item,index) in 2" :key="index">
+            <MenuItem v-for="(item,index) in 5" :key="index" :name="index">
+                <Icon type="document-text"></Icon>
+                文章管理
+            </MenuItem>
+            
+        </MenuGroup>
+        
+    </Menu>
+     <p>Change theme</p>
+    <!-- <RadioGroup v-model="theme3">
+        <Radio label="light"></Radio>
+        <Radio label="dark"></Radio>
+    </RadioGroup> -->
 	</div>
 </template>
-
+     
 <script>
     export default {
         data() {
             return {
-                theme2: 'light'
+                theme2: 'light',
+               activeName:1
             }
         },
         methods: {

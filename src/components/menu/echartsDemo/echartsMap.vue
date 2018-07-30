@@ -8,7 +8,7 @@
 <script>
     import echarts from 'echarts'
     import china from 'echarts/map/js/china.js';
-    import test from '../../../javascripts/test.js'
+    // import test from '../../../javascripts/'
     import world from 'echarts/map/json/world.json'
 
 echarts.registerMap('world', world)
@@ -28,7 +28,7 @@ echarts.registerMap('world', world)
         methods: {
             initMapchart() {
                 let chart = this.$echarts.init(document.getElementById('mapChart'))
-                console.log(chart, "2:", china, "3:", test)
+                // console.log(chart, "2:", china, "3:", test)
                 chart.setOption({
                     title: {
                         text: 'iphone销量',

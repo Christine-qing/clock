@@ -12,6 +12,7 @@
     "test": "npm run e2e"
   },
   "dependencies": {
+    "vuedraggable": "^2.11.0",
     "echarts": "^3.8.5",
     "inmap": "^1.2.2",
     "iview": "^2.7.3",

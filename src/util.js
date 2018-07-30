@@ -752,9 +752,20 @@ export const setPath = ((path)=>{
   }
 
 })
+function randomString(len) {
+    let l = len || 32;　　
+    let $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let maxPos = $chars.length;
+    let pwd = '';
+    for (let i = 0; i < l; i++) {
+        pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    }
+    return pwd;
+}
 
-
-
+export default{
+  randomString
+}
 
 
 
