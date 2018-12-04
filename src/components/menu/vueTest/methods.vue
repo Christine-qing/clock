@@ -2,20 +2,13 @@
     <div>
         <Button><router-link to="/menuPage">返回菜单列表</router-link></Button><br/>
         <p>nextTick</p>
-        <div id="app" v-pre>
-            {{message}} 直接跳过不需要编译的标签，加快编译效率
-        </div>
-        <div v-cloak> {{message}}直接结束编译，避免出现闪烁花括号，配合css样式书写</div>
-        <!-- <Button @click="foo()">{{msg}}<input type="text" v-focus></Button> -->
+  
+    
         <p id="page">{{content|reverseStr}}</p>
         <input type="text" v-model="aaa ">
         <div> {{aaa|validatePhone}} </div>
         <!-- <child message="hello!">第一种props赋值方式</child> -->
         <!-- <child :message="hello2">第二种props赋值方式</child> -->
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <keep-alive>
@@ -52,10 +45,16 @@
             <p v-changeRed="color">55555</p>
         </div>
         <span v-bind:title="messages">鼠标提示</span>
-        <br><br><br><br><br><br>
-       sfsad
-        <div :style="{width:width+'px',height:'200px',border:'1px solid red',margin:'20px'}" ></div>
+        <br><br><br><br><br><br> sfsad
+        <div :style="{width:width+'px',height:'200px',border:'1px solid red',margin:'20px'}" @click="download"></div>
+        <hr>
+        <br>
 
+        input:<input type="text"  v-model.trim="newValue">
+       <p> 文本内容：{{newValue}}</p>
+       <p clsss="red">我是</p>
+
+        <div style="margin-bottom:200px;"></div>
     </div>
 </template>
 
@@ -104,7 +103,8 @@
                 color: "blue",
                 messages: '页面加载于 ' + new Date().toLocaleString(),
                 aaa: "",
-                width:100
+                width: 100,
+                newValue:"1112"
             }
         },
         directives: {
@@ -136,7 +136,7 @@
         },
         methods: {
             updateMessage() {
-                 const id = this.$route.params.list
+                const id = this.$route.params.list
                 console.log(this.$el.textContent, this.message) // => '没有更新'
                 this.message = '更新完成'
                 this.$nextTick(function() {
@@ -163,8 +163,9 @@
                 this.value.a = 4
             },
             download() {
+                debugger
                 //用$emit发射出去；$emit(name,val)；name:按需定义，val：需要发射出去的值
-                bus.$emit("tabDisplay", 0)
+                bus.$emit("tabDisplay", 1)
             },
             submit() {
                 console.log(this.formLeft)
@@ -195,7 +196,7 @@
     }
 </script>
 
-<style module>
+<style module >
     [v-cloak] {
         display: none;
     }
@@ -215,8 +216,11 @@
         background-color: red;
     }
     .textBox {
-       width:100px;
-       height:300px;
-       border:1px solid red;
+        width: 100px;
+        height: 300px;
+        border: 1px solid red;
+    }
+    .red{
+       color:red
     }
 </style>

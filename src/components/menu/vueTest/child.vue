@@ -31,7 +31,8 @@ import bus from "../../../bus"
            bus.$on("tabDisplay",this.tabDisplay)
         },
         methods: {
-              tableDisplay(value) {
+              tabDisplay(value) {
+                  debugger
                 this.index = value;
             }   
         },

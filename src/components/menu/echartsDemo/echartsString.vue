@@ -7,7 +7,7 @@
                       <Option v-for="el in item.type" :value="el.value" :key="el.value">{{ el.label }}</Option>
                  </Select>
             <div style="width: 800px;height: 350px;">
-                <portrait-charts :xAxisData="item.data.xAxisData" :yAxisData="item.data.yAxisData" :seriesData="item.data.seriesData" :pieSeriesData="item.data.pieSeriesData"></portrait-charts>
+                <portrait-charts :xAxisData="item.data.xAxisData" :yAxisData="item.data.yAxisData" :seriesData="item.data.seriesData" :pieSeriesData="item.data.pieSeriesData" :chartType="item.model"></portrait-charts>
             </div>
         </div>
     </div>
@@ -34,13 +34,13 @@
             init() {
                 let getData = [{
                         id: 0,
-                        model: "h_bar",
+                        model: "line",
                         type: [{
-                                value: "h_bar",
+                                value: "v_bar",
                                 label: "纵向柱状图"
                             },
                             {
-                                value: "v_bar",
+                                value: "h_bar",
                                 label: "横向柱状图"
                             },
                             {
@@ -87,11 +87,11 @@
                         id: 1,
                         model: "h_bar",
                         type: [{
-                                value: "h_bar",
+                                value: "v_bar",
                                 label: "纵向柱状图"
                             },
                             {
-                                value: "v_bar",
+                                value: "h_bar",
                                 label: "横向柱状图"
                             },
                             {
@@ -142,14 +142,14 @@
             changeType(val, item) {
                 let id = item.id
                 switch (val) {
-                    case "h_bar":
+                    case "v_bar":
                         item.data.xAxisData = this.setData[item.id].data.xAxisData
                         item.data.yAxisData = this.setData[item.id].data.yAxisData
                         item.data.seriesData.data = this.setData[item.id].data.seriesData.data
                         item.data.seriesData.barWidth='20%'
                         item.data.seriesData.type = "bar"
                         break;
-                    case "v_bar":
+                    case "h_bar":
                         item.data.xAxisData = this.setData[item.id].data.yAxisData
                         item.data.yAxisData = this.setData[item.id].data.xAxisData
                         item.data.seriesData.data = this.setData[item.id].data.seriesData.data

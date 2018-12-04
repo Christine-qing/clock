@@ -32,6 +32,12 @@
                 default: function() {
                     return {}
                 }
+            },
+            chartType: {
+                type: String,
+                default: function() {
+                    return ""
+                }
             }
         },
         name: "",
@@ -46,24 +52,28 @@
             //  监听数据改变
             'xAxisData': {
                 handler: function(val, oldVal) {
-                    this.initData();
+                    debugger
+                    this.initData(val);
                 },
                 deep: true
             },
             'yAxisData': {
                 handler: function(val, oldVal) {
-                    this.initData();
+                    debugger
+                    // this.initData();
                 },
                 deep: true
             },
             'seriesData': {
                 handler: function(val, oldVal) {
+                    debugger
                     this.initData(val);
                 },
                 deep: true
             },
             'pieSeriesData': {
                 handler: function(val, oldVal) {
+                    debugger
                     this.initData(val);
                 },
                 deep: true
@@ -71,9 +81,10 @@
         },
         mounted() {
             this.initData();
+            debugger
         },
         methods: {
-           // 根据类型判断，筛选操作
+            // 根据类型判断，筛选操作
             initData(val) {
                 this.option = echartsConfig.barPortraitOption;
                 if (this.option.series.hasOwnProperty('data')) {
@@ -93,21 +104,31 @@
                         delete this.option.series
                         this.option.series = this.pieSeriesData
                     }
-                    this.option.series.barWidth = val.barWidth
-                    this.option.series.type = val.type
+                    this.chartsType()
                 } else {
                     this.setData()
-                    this.option.series.barWidth = "20%"
-                    this.option.series.type = "bar"
+                    this.chartsType()
+                    if (this.chartType === "h_bar") {
+                        this.option.xAxis = this.yAxisData
+                        this.option.yAxis = this.xAxisData
+                    }
                 }
                 this.myChart.setOption(this.option, true);
             },
-             // chart赋值
+            // chart赋值
             setData() {
                 this.option.xAxis = this.xAxisData
                 this.option.yAxis = this.yAxisData
                 this.option.series.data = this.seriesData.data
+                this.option.series.barWidth = "20%"
             },
+            chartsType() {
+                if (this.chartType === "v_bar" || this.chartType === "h_bar") {
+                    this.option.series.type = "bar"
+                } else {
+                    this.option.series.type = this.chartType
+                }
+            }
         }
     }
 </script>

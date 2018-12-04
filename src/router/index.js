@@ -293,12 +293,12 @@ export default new Router({
         component: (resolve) => require(['@/components/menu/Mapbox/addEnclosure'], resolve),
 
     },
-    {
-        path: '/createRegexp',
-        name: 'createRegexp',
-        component: (resolve) => require(['@/components/menu/regexp/createRegexp'], resolve),
+    // {
+    //     path: '/createRegexp',
+    //     name: 'createRegexp',
+    //     component: (resolve) => require(['@/components/menu/regexp/createRegexp'], resolve),
 
-    },
+    // },
     {
         path: '/inMap_test',
         name: 'inMap_test',
@@ -383,12 +383,6 @@ export default new Router({
 
     },
     {
-        path: '/ts_init',
-        name: 'ts_init',
-        component: (resolve) => require(['@/components/menu/typeScript/ts_init'], resolve),
-
-    },
-    {
         path: '/bmap_init',
         name: 'bmap_init',
         component: (resolve) => require(['@/components/menu/Bmap/bmap_init'], resolve),
@@ -407,11 +401,6 @@ export default new Router({
         path: '/methods',
         name: 'methods',
         component: (resolve) => require(['@/components/menu/vueTest/methods'], resolve),
-    },
-    {
-        path: '/StoreIndex',
-        name: 'StoreIndex',
-        component: (resolve) => require(['@/components/menu/storeProject/StoreIndex'], resolve),
     },
     {
         path: '/iviewTable',

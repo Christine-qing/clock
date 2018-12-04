@@ -45,7 +45,7 @@
         <template slot="title"><Icon type="stats-bars"></Icon>CDP</template>
                 <MenuItem name="8-1"><router-link to="chartInit">v-chart</router-link></MenuItem>  
                 <MenuItem name="8-2"><router-link to="chartMap">v-chart-map</router-link></MenuItem>  
-                <MenuItem name="8-3"><router-link to="boxDrag">拖拽效果</router-link></MenuItem>  
+                <MenuItem name="8-3"><router-link to="boxDrag">v-bind绑定class</router-link></MenuItem>  
       </Submenu>
       <Submenu name="9">   
         <template slot="title"><Icon type="stats-bars"></Icon>v-charts</template>
@@ -63,8 +63,6 @@
                 <MenuItem name="11-7"><router-link to="inMap_GriddingOverlay">网格聚合</router-link></MenuItem>        
                 <MenuItem name="11-8"><router-link to="inMap_HoneycombOverlay">蜂窝聚合</router-link></MenuItem>        
                 <MenuItem name="11-9"><router-link to="inMap_HeatOverlay">热力展示</router-link></MenuItem>        
-     
-     
       </Submenu>
    
       <Submenu name="13">   
@@ -73,11 +71,7 @@
                 <MenuItem name="13-2"><router-link to="bmap_Control">bmap_Control</router-link></MenuItem>      
                 <MenuItem name="13-3"><router-link to="bmap_overlay">bmap_overlay</router-link></MenuItem>                  
       </Submenu>
-       <Submenu name="14">   
-        <template slot="title"><Icon type="stats-bars"></Icon>storeProject</template>
-                <MenuItem name="14-1"><router-link to="StoreIndex">StoreIndex</router-link></MenuItem>    
-              
-      </Submenu>
+
       
     </Menu>
  
